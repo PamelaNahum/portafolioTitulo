@@ -11,7 +11,7 @@ const override= {
     marginLeft:"50%"
   };
 
-const Warehouse = () => {
+const Storage = () => {
 
     const [loading, setLoading] = useState(false);
 
@@ -39,4 +39,4 @@ const Warehouse = () => {
 
 }
 
-export default Warehouse;
+export default Storage;

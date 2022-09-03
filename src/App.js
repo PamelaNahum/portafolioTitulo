@@ -7,7 +7,7 @@ import Kitchen from "./pages/Kitchen";
 import Admin from "./pages/Admin";
 import Finance from "./pages/Finance";
 import Reception from "./pages/Reception";
-import Warehouse from "./pages/Warehouse";
+import Storage from "./pages/Storage";
 
 const App =()=>{
     return(
@@ -19,7 +19,7 @@ const App =()=>{
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/finanzas' element={<Finance/>}></Route>
       <Route path='/Recepcion' element={<Reception/>}></Route>
-      <Route path='/Bodega' element={<Warehouse/>}></Route>
+      <Route path='/Bodega' element={<Storage/>}></Route>
     </Routes>
     </BrowserRouter>
     );
