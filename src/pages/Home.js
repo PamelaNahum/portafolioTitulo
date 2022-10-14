@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import Navbar from "../components/Navbar";
+import {Navbar, Header} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
-import Header from "../components/Header";
+import { AboutUs, Chef, FindUs, Footer, Gallery, Intro, Laurels, SpecialMenu } from '../container';
+import '../App.css';
 //import {useNavigate} from 'react-router-dom';
 
 const override= {
@@ -32,7 +33,14 @@ const Home = () => {
             :
             <>
                 <Navbar menu={['Inicio', 'Reservar', 'Ordenar', 'Carta', 'Preguntas Frecuentes', 'Contacto']}/>
-                <Header/>
+    <SpecialMenu />
+    <Chef />
+    <Intro />
+    <Laurels />
+    <Gallery />
+    <FindUs />
+    <Footer />
+                
             </>
         }
     

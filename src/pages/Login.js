@@ -49,7 +49,7 @@ const Login = ()=>{
   <form onSubmit={handleSubmit}>
         <img className="img" src = {logo} alt = '' />
         <div className="mb-3">
-          <label>email</label>
+          <label>Email</label>
           <input
             type="text"
             className="form-control"

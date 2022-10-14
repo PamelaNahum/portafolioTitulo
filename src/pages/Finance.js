@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import Navbar from "../components/Navbar";
+import {Navbar} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
 //import {useNavigate} from 'react-router-dom';
 
