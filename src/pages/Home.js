@@ -23,7 +23,7 @@ const Home = () => {
         setLoading(true)
         setTimeout(()=>{
             setLoading(false)
-        }, 5000);
+        }, 20);
     },[])
 
     return(
@@ -32,7 +32,7 @@ const Home = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar menu={['Inicio', 'Reservar', 'Ordenar', 'Carta', 'Preguntas Frecuentes', 'Contacto']}/>
+                <Navbar tipo={'cliente'}/>
     <SpecialMenu />
     <Chef />
     <Intro />

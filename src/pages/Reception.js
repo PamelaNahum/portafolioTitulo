@@ -30,7 +30,7 @@ const Reception = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar menu={['Asignar mesas', 'Revisar Reservas', 'Ver Disponibilidad']}/>
+                <Navbar tipo={'recepcion'}/>
             </>
         }
     

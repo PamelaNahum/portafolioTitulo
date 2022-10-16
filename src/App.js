@@ -8,12 +8,14 @@ import Admin from "./pages/Admin";
 import Finance from "./pages/Finance";
 import Reception from "./pages/Reception";
 import Storage from "./pages/Storage";
+import Reserve from "./pages/Reserve";
 
 const App =()=>{
     return(
         <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
+      <Route path='/Reservar' element={<Reserve/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/cocina' element={<Kitchen/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>

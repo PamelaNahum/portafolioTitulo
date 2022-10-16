@@ -30,7 +30,7 @@ const Finance = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar menu={['Calcular Ganacias', 'Emitir Boletas']}/>
+                <Navbar tipo={'finanzas'}/>
             </>
         }
     

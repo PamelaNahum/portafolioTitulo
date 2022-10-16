@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { SubHeading, MenuItem } from '../../components';
-import Plato from '../../assets/images/porotos-granados-1.jpg';
-import Plato2 from '../../assets/images/ceviche.jpg';
-import Plato3 from '../../assets/images/Cerdito.jpg';
+import Plato from '../../assets/images/cazuela.jpg';
 import { data, images } from '../../constants';
 import './SpecialMenu.css';
 
@@ -25,9 +23,7 @@ const SpecialMenu = () => (
       </div>
 
       <div className="app__specialMenu-menu_img">
-        <img src={Plato} alt="menu__img" />
-        <img src={Plato2} style={{ marginTop: 5 }} alt="menu__img" />
-        <img src={Plato3} style={{ marginTop: 5 }} alt="menu__img" />
+        <img src={Plato} style={{ marginTop: 50 }} alt="menu__img" />
       </div>
 
       <div className="app__specialMenu-menu_cocktails  flex__center">

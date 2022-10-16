@@ -6,6 +6,7 @@ import Gallery from './Gallery/Gallery';
 import Intro from './Intro/Intro';
 import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
+import ReserveForm from './ReserveForm/ReserveForm';
 
 export {
   AboutUs,
@@ -16,4 +17,5 @@ export {
   Intro,
   Laurels,
   SpecialMenu,
+  ReserveForm
 };

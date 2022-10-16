@@ -30,7 +30,7 @@ const Admin = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar menu={['Inventario', 'Mesas', 'Clientes', 'Disponibilidad', 'Reportes']}/>
+                <Navbar tipo={'admin'}/>
             </>
         }
     

@@ -30,7 +30,7 @@ const Kitchen = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar menu={['Pedidos', 'Recetas']}/>
+                <Navbar tipo={'cocina'}/>
             </>
         }
     
