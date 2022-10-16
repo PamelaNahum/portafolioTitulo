@@ -17,7 +17,7 @@ const Navbar =({menu})=>{
     window.addEventListener('scroll', changeBackground);
 
     return(
-        <nav className={nav ? 'nav active':'nav'}>
+        <nav className={nav ? 'nav active':'nav'} style={{flex:2}}>
             <Link to='main' className="logo">
                 <img src = {logo} alt = '' />
             </Link>

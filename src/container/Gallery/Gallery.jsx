@@ -2,7 +2,9 @@ import React from 'react';
 import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 import { SubHeading } from '../../components';
-import { images } from '../../constants';
+import Plato from '../../assets/images/porotos-granados-1.jpg';
+import Plato2 from '../../assets/images/ceviche.jpg';
+import Plato3 from '../../assets/images/Cerdito.jpg';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -22,13 +24,13 @@ const Gallery = () => {
     <div className="app__gallery flex__center">
       <div className="app__gallery-content">
         <SubHeading title="Instagram" />
-        <h1 className="headtext__cormorant">Photo Gallery</h1>
-        <p className="p__opensans" style={{ color: '#AAAAAA', marginTop: '2rem' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</p>
-        <button type="button" className="custom__button">View More</button>
+        <h1 className="headtext__cormorant" style={{ color: '#E76F51' }}>Preparaciones</h1>
+        <p className="p__opensans" style={{ color: '#AAAAAA', marginTop: '2rem' }}>Conoce alguno de nuestras preparaciones y elige la que más te guste.</p>
+        <button type="button" className="custom__button">Ver más</button>
       </div>
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
-          {[images.gallery01, images.gallery02, images.gallery03, images.gallery04].map((image, index) => (
+          {[Plato, Plato2, Plato3].map((image, index) => (
             <div className="app__gallery-images_card flex__center" key={`gallery_image-${index + 1}`}>
               <img src={image} alt="gallery_image" />
               <BsInstagram className="gallery__image-icon" />

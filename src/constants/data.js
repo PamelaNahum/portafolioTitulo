@@ -2,57 +2,57 @@ import images from './images';
 
 const wines = [
   {
-    title: 'Chapel Hill Shiraz',
-    price: '$56',
-    tags: 'AU | Bottle',
+    title: 'Palta Reina',
+    price: '$3.500',
+    tags: 'Plata rellena con ensalada de pollo',
   },
   {
-    title: 'Catena Malbee',
-    price: '$59',
-    tags: 'AU | Bottle',
+    title: 'Ceviche',
+    price: '$4.000',
+    tags: 'Ceviche de Salmón',
   },
   {
-    title: 'La Vieillw Rose',
-    price: '$44',
-    tags: 'FR | 750 ml',
+    title: 'Tomate Relleno',
+    price: '$4.400',
+    tags: 'Tomate relleno con ensalada de atún',
   },
   {
-    title: 'Rhino Pale Ale',
-    price: '$31',
-    tags: 'CA | 750 ml',
+    title: 'Machas a la parmesana',
+    price: '$5.000',
+    tags: 'Machas horneada con queso mantecoso',
   },
   {
-    title: 'Irish Guinness',
-    price: '$26',
-    tags: 'IE | 750 ml',
+    title: 'Locos Mayo',
+    price: '$4.500',
+    tags: 'Locos con mayonesa sobre ensalda',
   },
 ];
 
 const cocktails = [
   {
-    title: 'Aperol Sprtiz',
-    price: '$20',
-    tags: 'Aperol | Villa Marchesi prosecco | soda | 30 ml',
+    title: 'Cazuela',
+    price: '$8.000',
+    tags: 'Caldo de pollo, más verduras variadas',
   },
   {
-    title: "Dark 'N' Stormy",
-    price: '$16',
-    tags: 'Dark rum | Ginger beer | Slice of lime',
+    title: "Chaquicán",
+    price: '$7.500',
+    tags: 'Guiso de carne con papas, zapallo y otras verduras',
   },
   {
-    title: 'Daiquiri',
-    price: '$10',
-    tags: 'Rum | Citrus juice | Sugar',
+    title: 'Caldillo de congrio',
+    price: '$9.000',
+    tags: 'Caldo de congrio, más verduras variadas',
   },
   {
-    title: 'Old Fashioned',
-    price: '$31',
-    tags: 'Bourbon | Brown sugar | Angostura Bitters',
+    title: 'Cerdo con puré',
+    price: '$7.000',
+    tags: 'Pulpa de cherdo acompañado con puré de papa',
   },
   {
-    title: 'Negroni',
-    price: '$26',
-    tags: 'Gin | Sweet Vermouth | Campari | Orange garnish',
+    title: 'Protos grandos con pilco',
+    price: '$7.000',
+    tags: 'Protos cocidos con cebolla, zapallo, tomate y choclo',
   },
 ];
 

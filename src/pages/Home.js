@@ -36,7 +36,6 @@ const Home = () => {
     <SpecialMenu />
     <Chef />
     <Intro />
-    <Laurels />
     <Gallery />
     <FindUs />
     <Footer />
