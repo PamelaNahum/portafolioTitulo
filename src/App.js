@@ -9,6 +9,9 @@ import Finance from "./pages/Finance";
 import Reception from "./pages/Reception";
 import Storage from "./pages/Storage";
 import Reserve from "./pages/Reserve";
+import Contact from "./pages/Contact";
+import Order from "./pages/Order";
+import TableList from "./pages/Tables";
 
 const App =()=>{
     return(
@@ -16,12 +19,15 @@ const App =()=>{
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/Reservar' element={<Reserve/>}></Route>
+      <Route path='/Contacto' element={<Contact/>}></Route>
+      <Route path='/Ordenar' element={<Order/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/cocina' element={<Kitchen/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/finanzas' element={<Finance/>}></Route>
       <Route path='/Recepcion' element={<Reception/>}></Route>
       <Route path='/Bodega' element={<Storage/>}></Route>
+      <Route path='/Mesas' element={<TableList/>}></Route>
     </Routes>
     </BrowserRouter>
     );

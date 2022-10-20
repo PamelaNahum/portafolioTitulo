@@ -7,7 +7,7 @@ import '../App.css';
 //import {useNavigate} from 'react-router-dom';
 
 
-const Reserve = () => {
+const Order = () => {
 
     return(
     <div className="App">
@@ -21,4 +21,4 @@ const Reserve = () => {
 
 }
 
-export default Reserve;
+export default Order;

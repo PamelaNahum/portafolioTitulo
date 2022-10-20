@@ -2,17 +2,17 @@ import React, {useState, useEffect} from "react";
 import '../css/Home.css'
 import {Navbar} from "../components";
 import { ReserveForm } from '../container';
-import { Footer } from '../container';
+import { Footer, FindUs } from '../container';
 import '../App.css';
 //import {useNavigate} from 'react-router-dom';
 
 
-const Reserve = () => {
+const Contact = () => {
 
     return(
     <div className="App">
     <Navbar tipo={'cliente'}/>
-    <ReserveForm />
+    <FindUs />
     <Footer />
                 
     
@@ -21,4 +21,4 @@ const Reserve = () => {
 
 }
 
-export default Reserve;
+export default Contact;

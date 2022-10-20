@@ -4,7 +4,7 @@ const wines = [
   {
     title: 'Palta Reina',
     price: '$3.500',
-    tags: 'Plata rellena con ensalada de pollo',
+    tags: 'Palta rellena con ensalada de pollo',
   },
   {
     title: 'Ceviche',

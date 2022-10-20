@@ -14,14 +14,11 @@ const override= {
 const Admin = () => {
 
     const [loading, setLoading] = useState(false);
-
-    
-    
     useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
             setLoading(false)
-        }, 5000);
+        }, 200);
     },[])
 
     return(

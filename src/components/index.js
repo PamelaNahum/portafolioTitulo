@@ -4,7 +4,8 @@ import FooterOverlay from './Footer/FooterOverlay';
 import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import Header from './Header/Header';
-import Form from './Form/Login'
+import Form from './Form/Login';
+import Table from './Table/Table';
 
 export {
   SubHeading,
@@ -13,5 +14,6 @@ export {
   MenuItem,
   Navbar,
   Header,
-  Form
+  Form,
+  Table
 };

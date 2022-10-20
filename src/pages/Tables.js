@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import {Navbar} from "../components";
+import {Navbar, Table} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
 //import {useNavigate} from 'react-router-dom';
 
@@ -11,12 +11,9 @@ const override= {
     marginLeft:"50%"
   };
 
-const Kitchen = () => {
+const TableList = () => {
 
     const [loading, setLoading] = useState(false);
-
-    
-    
     useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
@@ -30,7 +27,8 @@ const Kitchen = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar tipo={'cocina'}/>
+                <Navbar tipo={'admin'}/>
+                <Table/>
             </>
         }
     
@@ -39,4 +37,4 @@ const Kitchen = () => {
 
 }
 
-export default Kitchen;
+export default TableList;

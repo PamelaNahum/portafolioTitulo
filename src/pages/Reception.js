@@ -21,7 +21,7 @@ const Reception = () => {
         setLoading(true)
         setTimeout(()=>{
             setLoading(false)
-        }, 5000);
+        }, 200);
     },[])
 
     return(

@@ -40,10 +40,10 @@ const Navbar =({tipo})=>{
             {tipo==='admin' && 
                 <ul className='menu'>
                 <li><Link to="/" style={{ textDecoration: 'none' }}>Inventario</Link></li>
-                <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Mesas</Link></li>
-                <li><Link to="/Ordenar" style={{ textDecoration: 'none' }}>Clientes</Link></li>
-                <li><Link to="/Carta" style={{ textDecoration: 'none' }}>Disponibilidad</Link></li>
-                <li><Link to="/Contacto" style={{ textDecoration: 'none' }}>Reportes</Link></li>
+                <li><Link to="/Mesas" style={{ textDecoration: 'none' }}>Mesas</Link></li>
+                <li><Link to="/Clientes" style={{ textDecoration: 'none' }}>Clientes</Link></li>
+                <li><Link to="/Dispo" style={{ textDecoration: 'none' }}>Disponibilidad</Link></li>
+                <li><Link to="/Reportes" style={{ textDecoration: 'none' }}>Reportes</Link></li>
             </ul>
             }
             {tipo==='finanzas' && 
