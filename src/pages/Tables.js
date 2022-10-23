@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import {Navbar, Table} from "../components";
+import {Navbar, TableMesas} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import { getTable } from "../services/Tables";
 //import {useNavigate} from 'react-router-dom';
 
 const override= {
@@ -13,12 +14,20 @@ const override= {
 
 const TableList = () => {
 
+    const [allTables, setAllTables] = useState();
+
     const [loading, setLoading] = useState(false);
+    const tablesEnable = async() =>{
+        console.log('hola')
+        setAllTables(await getTable())
+        
+    }
     useEffect(()=>{
         setLoading(true)
+        tablesEnable()
         setTimeout(()=>{
             setLoading(false)
-        }, 200);
+        }, 5000);
     },[])
 
     return(
@@ -28,7 +37,7 @@ const TableList = () => {
             :
             <>
                 <Navbar tipo={'admin'}/>
-                <Table/>
+                <TableMesas mesas={allTables}/>
             </>
         }
     

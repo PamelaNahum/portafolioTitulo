@@ -3,7 +3,7 @@ import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import './Table.css';
 
 
-const Table =()=>{
+const TableMesas =({mesas})=>{
 
     const dataMesas = [
         { id: 1, nombre: "Mesahfdkghkfjdgh1", minutos: 5 },
@@ -14,7 +14,7 @@ const Table =()=>{
         { id: 6, nombre: "fdgfdgfdg", minutos: 2 },
       ];
     
-      const [data, setData] = useState(dataMesas);
+      const [data, setData] = useState(mesas);
       const [modalEditar, setModalEditar] = useState(false);
       const [modalEliminar, setModalEliminar] = useState(false);
       const [modalInsertar, setModalInsertar] = useState(false);
@@ -226,4 +226,4 @@ const Table =()=>{
 
     );
 }
-export default Table;
+export default TableMesas;

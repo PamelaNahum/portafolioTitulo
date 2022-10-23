@@ -5,7 +5,7 @@ import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import Header from './Header/Header';
 import Form from './Form/Login';
-import Table from './Table/Table';
+import TableMesas from './Table/Table';
 
 export {
   SubHeading,
@@ -15,5 +15,5 @@ export {
   Navbar,
   Header,
   Form,
-  Table
+  TableMesas
 };
