@@ -39,7 +39,8 @@ const Navbar =({tipo})=>{
             }
             {tipo==='admin' && 
                 <ul className='menu'>
-                <li><Link to="/" style={{ textDecoration: 'none' }}>Inventario</Link></li>
+                    <li><Link to="/admin" style={{ textDecoration: 'none' }}>Inicio</Link></li>
+                <li><Link to="/Invetario" style={{ textDecoration: 'none' }}>Inventario</Link></li>
                 <li><Link to="/Mesas" style={{ textDecoration: 'none' }}>Mesas</Link></li>
                 <li><Link to="/Clientes" style={{ textDecoration: 'none' }}>Clientes</Link></li>
                 <li><Link to="/Dispo" style={{ textDecoration: 'none' }}>Disponibilidad</Link></li>
@@ -48,19 +49,22 @@ const Navbar =({tipo})=>{
             }
             {tipo==='finanzas' && 
                 <ul className='menu'>
-                <li><Link to="/" style={{ textDecoration: 'none' }}>Calcular Ganancias</Link></li>
+                <li><Link to="/finanzas" style={{ textDecoration: 'none' }}>Inicio</Link></li>
+                <li><Link to="/CalGanacias" style={{ textDecoration: 'none' }}>Calcular Ganancias</Link></li>
                 <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Emitir Boletas</Link></li>
                 </ul>
             }
             {tipo==='cocina' && 
                 <ul className='menu'>
-                <li><Link to="/" style={{ textDecoration: 'none' }}>Pedidos</Link></li>
+                <li><Link to="/cocina" style={{ textDecoration: 'none' }}>Inicio</Link></li>
+                <li><Link to="/Pedidos" style={{ textDecoration: 'none' }}>Pedidos</Link></li>
                 <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Recetas</Link></li>
                 </ul>
             }
             {tipo==='recepcion' && 
                 <ul className='menu'>
-                <li><Link to="/" style={{ textDecoration: 'none' }}>Asignar mesas</Link></li>
+                <li><Link to="/recepcion" style={{ textDecoration: 'none' }}>Asignar mesas</Link></li>
+                <li><Link to="/AsigMesas" style={{ textDecoration: 'none' }}>Asignar mesas</Link></li>
                 <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Revisar Reservas</Link></li>
                 <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Ver Disponibilidad</Link></li>
                 </ul>

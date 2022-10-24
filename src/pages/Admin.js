@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
 import {Navbar} from "../components";
+import { Chef } from '../container';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 //import {useNavigate} from 'react-router-dom';
 
@@ -28,6 +29,7 @@ const Admin = () => {
             :
             <>
                 <Navbar tipo={'admin'}/>
+                <Chef />
             </>
         }
     

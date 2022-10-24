@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
+import { addTable, disableTable, editTable, enableTable, getTable } from "../../services/Tables";
+import { BsArrowRightShort } from 'react-icons/bs';
 import './Table.css';
 
 
-const TableMesas =({mesas})=>{
-
-    const dataMesas = [
-        { id: 1, nombre: "Mesahfdkghkfjdgh1", minutos: 5 },
-        { id: 2, nombre: "gfdfgdgfd", minutos: 4 },
-        { id: 3, nombre: "fdgfdgfdg", minutos: 6 },
-        { id: 4, nombre: "fdgfdfdgdf", minutos: 2 },
-        { id: 5, nombre: "fdgdfdfgfdgfd", minutos: 8 },
-        { id: 6, nombre: "fdgfdgfdg", minutos: 2 },
-      ];
+const TableMesas =({mesas, setMesas})=>{
     
       const [data, setData] = useState(mesas);
       const [modalEditar, setModalEditar] = useState(false);
@@ -32,27 +25,31 @@ const TableMesas =({mesas})=>{
     
       const handleChange=e=>{
         const {name, value}=e.target;
+        console.log(e.target)
         setMesaSeleccionado((prevState)=>({
           ...prevState,
           [name]: value
         }));
       }
     
-      const editar=()=>{
-        var dataNueva=data;
-        dataNueva.map(mesa=>{
-          if(mesa.id===mesaSeleccionado.id){
-            mesa.minutos=mesaSeleccionado.minutos;
-            mesa.nombre=mesaSeleccionado.nombre;
-          }
-        });
-        setData(dataNueva);
+      const editar= async(table)=>{
+        const edit = {"id":table.id, "capacity": parseInt(table.capacity)}
+        console.log(edit)
+        await editTable(edit)
+        setData(await getTable())
         setModalEditar(false);
       }
     
-      const eliminar =()=>{
-        setData(data.filter(mesa=>mesa.id!==mesaSeleccionado.id));
-        setModalEliminar(false);
+      const eliminar = async(table)=>{
+        await enableTable(table.id)
+        setData(await getTable())
+        setModalEliminar(false)
+      }
+
+      const habilitar = async(table)=>{
+        await disableTable(table.id)
+        setData(await getTable())
+        setModalEliminar(false)
       }
     
       const abrirModalInsertar=()=>{
@@ -60,12 +57,11 @@ const TableMesas =({mesas})=>{
         setModalInsertar(true);
       }
     
-      const insertar =()=>{
-        var valorInsertar=mesaSeleccionado;
-        valorInsertar.id=data[data.length-1].id+1;
-        var dataNueva = data;
-        dataNueva.push(valorInsertar);
-        setData(dataNueva);
+      const insertar =async()=>{
+        var valorInsertar={"name":mesaSeleccionado.name, "capacity": parseInt(mesaSeleccionado.capacity)};
+        console.log(valorInsertar)
+        await addTable(valorInsertar);
+        setData(await getTable())
         setModalInsertar(false);
       }
     
@@ -81,6 +77,7 @@ const TableMesas =({mesas})=>{
               <th>ID</th>
               <th>Mesa</th>
               <th>Cantidad</th>
+              <th>Estado</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -88,10 +85,13 @@ const TableMesas =({mesas})=>{
             {data.map(elemento=>(
               <tr>
                 <td>{elemento.id}</td>
-                <td>{elemento.nombre}</td>
-                <td>{elemento.minutos}</td>
+                <td>{elemento.name}</td>
+                <td>{elemento.capacity}</td>
+                <td>{elemento.isEnabled ? 'Deshabilitada':'Habilitada'}</td>
                 <td><button className="btn btn-primary" style={{margin:10}} onClick={()=>seleccionarMesa(elemento, 'Editar')}>Editar</button> {"   "} 
-                <button className="btn btn-danger" style={{margin:10}} onClick={()=>seleccionarMesa(elemento, 'Eliminar')}>Eliminar</button></td>
+                {elemento.isEnabled ? <button className="btn btn-danger" style={{margin:10}} onClick={()=>seleccionarMesa(elemento, 'Habilitar')}>Habilitar</button>:
+                <button className="btn btn-danger" style={{margin:10}} onClick={()=>seleccionarMesa(elemento, 'Eliminar')}>Deshabilitar</button>}
+                </td>
               </tr>
             ))
             }
@@ -120,25 +120,25 @@ const TableMesas =({mesas})=>{
               <input
                 className="form-control"
                 type="text"
-                name="nombre"
-                value={mesaSeleccionado && mesaSeleccionado.nombre}
+                name="name"
+                value={mesaSeleccionado && mesaSeleccionado.name}
                 onChange={handleChange}
               />
               <br />
   
-              <label>Cantidad</label>
+              <label>Capacidad</label>
               <input
                 className="form-control"
                 type="text"
-                name="minutos"
-                value={mesaSeleccionado && mesaSeleccionado.minutos}
+                name="capacity"
+                value={mesaSeleccionado && mesaSeleccionado.capacity}
                 onChange={handleChange}
               />
               <br />
             </div>
           </ModalBody>
           <ModalFooter>
-            <button className="btn btn-primary" onClick={()=>editar()}>
+            <button className="btn btn-primary" onClick={()=>editar(mesaSeleccionado)}>
               Actualizar
             </button>
             <button
@@ -152,13 +152,26 @@ const TableMesas =({mesas})=>{
   
   
         <Modal isOpen={modalEliminar}>
+          {mesaSeleccionado.isEnabled ? 
           <ModalBody>
-            Estás Seguro que deseas eliminar el país {mesaSeleccionado && mesaSeleccionado.nombre}
-          </ModalBody>
+          Estás Seguro que deseas habilitar la mesa: {mesaSeleccionado && mesaSeleccionado.name}
+        </ModalBody>
+          :
+          <ModalBody>
+          Estás Seguro que deseas deshabilitar la mesa: {mesaSeleccionado && mesaSeleccionado.name}
+        </ModalBody>
+          }
+          
           <ModalFooter>
-            <button className="btn btn-danger" onClick={()=>eliminar()}>
+            {mesaSeleccionado.isEnabled ?
+            <button className="btn btn-danger" onClick={()=>habilitar(mesaSeleccionado)}>
+            Sí
+          </button>
+            :
+            <button className="btn btn-danger" onClick={()=>eliminar(mesaSeleccionado)}>
               Sí
-            </button>
+            </button>}
+            
             <button
               className="btn btn-secondary"
               onClick={()=>setModalEliminar(false)}
@@ -177,22 +190,13 @@ const TableMesas =({mesas})=>{
           </ModalHeader>
           <ModalBody>
             <div className="form-group">
-              <label>ID</label>
-              <input
-                className="form-control"
-                readOnly
-                type="text"
-                name="id"
-                value={data[data.length-1].id+1}
-              />
-              <br />
   
               <label>Mesa</label>
               <input
                 className="form-control"
                 type="text"
-                name="nombre"
-                value={mesaSeleccionado ? mesaSeleccionado.nombre: ''}
+                name="name"
+                value={mesaSeleccionado ? mesaSeleccionado.name: ''}
                 onChange={handleChange}
               />
               <br />
@@ -201,8 +205,8 @@ const TableMesas =({mesas})=>{
               <input
                 className="form-control"
                 type="text"
-                name="minutos"
-                value={mesaSeleccionado ? mesaSeleccionado.minutos: ''}
+                name="capacity"
+                value={mesaSeleccionado ? mesaSeleccionado.capacity: ''}
                 onChange={handleChange}
               />
               <br />

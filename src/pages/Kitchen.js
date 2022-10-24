@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import '../css/Home.css'
 import {Navbar} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import { Chef } from '../container';
 //import {useNavigate} from 'react-router-dom';
 
 const override= {
@@ -31,6 +32,7 @@ const Kitchen = () => {
             :
             <>
                 <Navbar tipo={'cocina'}/>
+                <Chef/>
             </>
         }
     

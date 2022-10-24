@@ -11,24 +11,29 @@ const addTable = async(table)=>{
 
 const getTable = async()=>{
     //peticion con valor desde body
-    const res = await axios.get(baseUrl+"/Table", {},config);
+    const res = await axios.get(baseUrl+"/Table",config);
     return res.data;
 }
 
 const editTable = async(table)=>{
     //peticion con valor desde body
-    const res = await axios.post(baseUrl+"/Table"+table.id, table, config);
+    const res = await axios.put(baseUrl+"/Table/"+table.id, table, config);
     console.log(res)
     return res.data;
 }
 
 const enableTable = async(table)=>{
-    //peticion con valor desde body
-    const res = await axios.post(baseUrl+"/Table"+table.tableId+'table/Avaible', table, config);
+    const res = await axios.patch(baseUrl+"/Table/"+table+'/enable',{}, config);
+    console.log(res)
+    return res.data;
+}
+
+const disableTable = async(table)=>{
+    const res = await axios.patch(baseUrl+"/Table/"+table+'/disable',{}, config);
     console.log(res)
     return res.data;
 }
 
 
 
-export {getTable, addTable, editTable, enableTable};
+export {getTable, addTable, editTable, enableTable, disableTable};

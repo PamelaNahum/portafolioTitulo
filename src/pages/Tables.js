@@ -14,18 +14,21 @@ const override= {
 
 const TableList = () => {
 
-    const [allTables, setAllTables] = useState();
+    const [allTables, setAllTables] = useState([{ id: 1, name: "Mesahfdkghkfjdgh1", capcity: 5 },]);
+    var tables = [];
 
     const [loading, setLoading] = useState(false);
     const tablesEnable = async() =>{
-        console.log('hola')
-        setAllTables(await getTable())
+        tables = await getTable();
+        console.log(await getTable())
         
     }
     useEffect(()=>{
         setLoading(true)
         tablesEnable()
         setTimeout(()=>{
+            setAllTables(tables)
+            
             setLoading(false)
         }, 5000);
     },[])
@@ -37,7 +40,7 @@ const TableList = () => {
             :
             <>
                 <Navbar tipo={'admin'}/>
-                <TableMesas mesas={allTables}/>
+                <TableMesas mesas={allTables} setMesas={setAllTables}/>
             </>
         }
     

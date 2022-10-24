@@ -1,46 +1,49 @@
 import React, { useCallback, useState } from "react";
 import './Login.css';
-import logo from '../../assets/images/Logotipo.png';
-import { loginUser } from "../../services/Login.js";
 import {useNavigate} from 'react-router-dom';
 
-const initialUser =[
+const initialReserva =[
   {
-    email:'',
-    password:''
+    rut:'',
+    nombre:'',
+    correo:'',
+    fecha:'',
+    persona:'',
+    mensaje:''
   }
 ]
 
 const Login = ()=>{
 
-  const [user, setUser]=useState(initialUser);
+  const [reserva, setReserva]=useState(initialReserva);
   const navigate = useNavigate();
-  const handleOnclick = useCallback(()=>navigate('/admin', {replace:true}, [navigate]));
-  const {email, password}= user;
+  const handleOnclick = useCallback(()=>navigate('/', {replace:true}, [navigate]));
+  const {rut, nombre, correo, fecha, persona, mensaje}= reserva;
 
   const handleInputChange=(e)=>{
     
     const changedFormValue ={
-      ...user, 
+      ...reserva, 
       [e.target.name]:e.target.value
       //key:key
     }
-    setUser(changedFormValue)
+    setReserva(changedFormValue)
   }
 
-  const login = async()=>{
-    handleOnclick()
-      const res = await loginUser(user)
-      console.log(res);
-      if(res.token){
-        handleOnclick()
-      }else{
-        console.log("f")
-      }
-  }
+  //const login = async()=>{
+    //handleOnclick()
+      //const res = await loginUser(user)
+      //console.log(res);
+      //if(res.token){
+        //handleOnclick()
+      //}else{
+        //console.log("f")
+      //}
+  //}
   const handleSubmit =(e)=>{
     e.preventDefault();
-    login()
+    handleOnclick()
+    //login()
   }
 
     return(
@@ -51,7 +54,7 @@ const Login = ()=>{
             type="text"
             className="form-control"
             placeholder="Ingresa tu Rut"
-            value={email}
+            value={rut}
             name='Rut'
             onChange={handleInputChange}
           />
@@ -61,8 +64,8 @@ const Login = ()=>{
             type="text"
             className="form-control"
             placeholder="Ingresa tu nombre"
-            value={password}
-            name='password'
+            value={nombre}
+            name='nombre'
             onChange={handleInputChange}
             
           />
@@ -72,8 +75,8 @@ const Login = ()=>{
             type="text"
             className="form-control"
             placeholder="Ingresa tu correo"
-            value={password}
-            name='password'
+            value={correo}
+            name='correo'
             onChange={handleInputChange}
             
           />
@@ -83,8 +86,8 @@ const Login = ()=>{
             type="date"
             className="form-control"
             placeholder="Ingresa fecha"
-            value={password}
-            name='password'
+            value={fecha}
+            name='fecha'
             onChange={handleInputChange}
             
           />
@@ -94,8 +97,8 @@ const Login = ()=>{
             type="number"
             className="form-control"
             placeholder="Ingresa personas"
-            value={password}
-            name='password'
+            value={persona}
+            name='persona'
             onChange={handleInputChange}
             
           />
@@ -105,8 +108,8 @@ const Login = ()=>{
             type="text"
             className="form-control"
             placeholder="Mensaje"
-            value={password}
-            name='password'
+            value={mensaje}
+            name='mensaje'
             onChange={handleInputChange}
             
           />
