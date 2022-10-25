@@ -12,6 +12,9 @@ import Reserve from "./pages/Reserve";
 import Contact from "./pages/Contact";
 import Order from "./pages/Order";
 import TableList from "./pages/Tables";
+import ReportFinance from "./pages/ReportFinance";
+import Disponi from "./pages/Disponi";
+import AdminClient from "./pages/AdminClient";
 
 const App =()=>{
     return(
@@ -28,6 +31,9 @@ const App =()=>{
       <Route path='/Recepcion' element={<Reception/>}></Route>
       <Route path='/Bodega' element={<Storage/>}></Route>
       <Route path='/Mesas' element={<TableList/>}></Route>
+      <Route path='/Reportes' element={<ReportFinance/>}></Route>
+      <Route path='/Dispo' element={<Disponi/>}></Route>
+      <Route path='/Clientes' element={<AdminClient/>}></Route>
     </Routes>
     </BrowserRouter>
     );

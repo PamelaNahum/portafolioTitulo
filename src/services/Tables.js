@@ -15,6 +15,12 @@ const getTable = async()=>{
     return res.data;
 }
 
+const getTableAvailability = async()=>{
+    //peticion con valor desde body
+    const res = await axios.get(baseUrl+"/Table",config);
+    return res.data;
+}
+
 const editTable = async(table)=>{
     //peticion con valor desde body
     const res = await axios.put(baseUrl+"/Table/"+table.id, table, config);

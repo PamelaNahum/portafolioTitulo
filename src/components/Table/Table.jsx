@@ -53,7 +53,7 @@ const TableMesas =({mesas, setMesas})=>{
       }
     
       const abrirModalInsertar=()=>{
-        setMesaSeleccionado(null);
+        //setMesaSeleccionado(null);
         setModalInsertar(true);
       }
     
