@@ -7,7 +7,7 @@ import Intro from './Intro/Intro';
 import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
 import ReserveForm from './ReserveForm/ReserveForm';
-
+import FormOrder from './ReserveForm/OrderForm';
 export {
   AboutUs,
   Chef,
@@ -17,5 +17,6 @@ export {
   Intro,
   Laurels,
   SpecialMenu,
-  ReserveForm
+  ReserveForm,
+  FormOrder
 };

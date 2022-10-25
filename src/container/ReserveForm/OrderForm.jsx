@@ -1,16 +1,15 @@
 import React from 'react';
-import { SubHeading } from '../../components';
+import { OrderForm, SubHeading } from '../../components';
 import Plato2 from '../../assets/images/ceviche.jpg';
-import { Reserve } from '../../components';
 import './Chef.css';
 
-const ReserveForm = () => (
+const FormOrder = () => (
   <div className="app__bg app__wrapper section__padding" style={{flexDirection:'row'}}>
     <div className="app__wrapper_info">
       <SubHeading title="" />
-      <h1 className="headtext__cormorant" style={{ color: '#E76F51' }}>Reservar</h1>
-      <Reserve/>
-      <p className="p__opensans" style={{ color: '#FFFFFF' }}> Recomendamos llegar 5 minutos antes. </p>
+      <h1 className="headtext__cormorant" style={{ color: '#E76F51' }}>Ordenar</h1>
+      <OrderForm/>
+    
       
     </div>
     <div className="app__wrapper_img">
@@ -19,4 +18,4 @@ const ReserveForm = () => (
   </div>
 );
 
-export default ReserveForm;
+export default FormOrder;

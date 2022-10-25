@@ -15,6 +15,7 @@ import TableList from "./pages/Tables";
 import ReportFinance from "./pages/ReportFinance";
 import Disponi from "./pages/Disponi";
 import AdminClient from "./pages/AdminClient";
+import Dish from "./pages/Dish";
 
 const App =()=>{
     return(
@@ -34,6 +35,7 @@ const App =()=>{
       <Route path='/Reportes' element={<ReportFinance/>}></Route>
       <Route path='/Dispo' element={<Disponi/>}></Route>
       <Route path='/Clientes' element={<AdminClient/>}></Route>
+      <Route path='/Carta' element={<Dish/>}></Route>
     </Routes>
     </BrowserRouter>
     );
