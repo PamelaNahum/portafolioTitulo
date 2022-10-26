@@ -10,6 +10,7 @@ import Reserve from './Form/Reserve';
 import TableMesas from './Table/Table';
 import TableClient from './Table/TableClient';
 import Cardfood from './Dish/Dish';
+import TableReserve from './Table/TableReserve';
 
 export {
   SubHeading,
@@ -23,5 +24,6 @@ export {
   TableClient, 
   Cardfood,
   OrderForm,
-  Reserve
+  Reserve,
+  TableReserve
 };
