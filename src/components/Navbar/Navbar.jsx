@@ -64,10 +64,9 @@ const Navbar =({tipo})=>{
             }
             {tipo==='recepcion' && 
                 <ul className='menu'>
-                <li><Link to="/recepcion" style={{ textDecoration: 'none' }}>Asignar mesas</Link></li>
-                <li><Link to="/AsigMesas" style={{ textDecoration: 'none' }}>Asignar mesas</Link></li>
-                <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Revisar Reservas</Link></li>
-                <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Ver Disponibilidad</Link></li>
+                <li><Link to="/Recepcion" style={{ textDecoration: 'none' }}>Inicio</Link></li>
+                <li><Link to="/ReservarRecepcion" style={{ textDecoration: 'none' }}>Asignar Mesa</Link></li>
+                <li><Link to="/DispoRecpecion" style={{ textDecoration: 'none' }}>Ver Disponibilidad</Link></li>
                 </ul>
             }
             

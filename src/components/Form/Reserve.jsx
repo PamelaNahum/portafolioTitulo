@@ -19,7 +19,7 @@ const initialReserva =[
 var date = {};
 var time ={};
 
-const Reserve = ()=>{
+const Reserve = ({type})=>{
 
   const [reserva, setReserva]=useState(initialReserva);
   const [showTable, setShowTable]=useState(false);
@@ -143,7 +143,7 @@ const Reserve = ()=>{
       </div>
       
       <div style={{marginLeft:200 }}>
-      {showTable ? <TableReserve mesas={allTables} setMesas={setAllTables} cliente={reserva} fecha={date} hora={time} />: <p>Seleccione una fecha y hora</p>}
+      {showTable ? <TableReserve mesas={allTables} setMesas={setAllTables} cliente={reserva} fecha={date} hora={time} type={type} />: <p>Seleccione una fecha y hora</p>}
         
     
       </div>

@@ -5,12 +5,12 @@ import {useNavigate} from 'react-router-dom';
 import './Table.css';
 
 
-const TableReserve =({mesas, setMesas, cliente, fecha, hora})=>{
+const TableReserve =({mesas, setMesas, cliente, fecha, hora, type})=>{
     
       const [data, setData] = useState(mesas);
       const [reservaCreada, setReservaCreada] = useState(false);
       const navigate = useNavigate();
-    const handleOnclick = useCallback(()=>navigate('/', {replace:true}, [navigate]));
+    const handleOnclick = useCallback(()=>navigate('/'+type, {replace:true}, [navigate]));
     
       const [mesaSeleccionado, setMesaSeleccionado] = useState({
         id: '',

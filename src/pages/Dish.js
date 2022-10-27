@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import '../css/Home.css'
 import {Cardfood, Navbar} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
+import { getDish } from "../services/Cliente";
 
 //import {useNavigate} from 'react-router-dom';
 
@@ -15,11 +16,15 @@ const override= {
 const Dish = () => {
 
     const [loading, setLoading] = useState(false);
+    const [dishes, setDishes] =useState([]);
 
-    
+    const getData = async()=>{
+        setDishes(await getDish());
+    }
     
     useEffect(()=>{
         setLoading(true)
+        getData();
         setTimeout(()=>{
             setLoading(false)
         }, 200);
@@ -31,9 +36,13 @@ const Dish = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar tipo={'cliente'}/>
+                <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
-                <Cardfood/>
+                <div style={{display:'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
+                
+                    <Cardfood dishes={dishes} />
+                
+                </div>
             </>
         }
     

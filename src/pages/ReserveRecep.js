@@ -7,12 +7,12 @@ import '../App.css';
 //import {useNavigate} from 'react-router-dom';
 
 
-const Reserve = () => {
+const ReserveRecep = () => {
 
     return(
     <div className="App">
-    <Navbar tipo={'cliente'}/>
-    <ReserveForm type={''} />
+    <Navbar tipo={'recepcion'}/>
+    <ReserveForm type={'Recepcion'} />
     <Footer />
                 
     
@@ -21,4 +21,4 @@ const Reserve = () => {
 
 }
 
-export default Reserve;
+export default ReserveRecep;

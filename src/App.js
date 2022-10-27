@@ -16,6 +16,8 @@ import ReportFinance from "./pages/ReportFinance";
 import Disponi from "./pages/Disponi";
 import AdminClient from "./pages/AdminClient";
 import Dish from "./pages/Dish";
+import ReserveRecep from "./pages/ReserveRecep";
+import DisponiRecep from "./pages/DisponiRecep";
 
 const App =()=>{
     return(
@@ -36,6 +38,9 @@ const App =()=>{
       <Route path='/Dispo' element={<Disponi/>}></Route>
       <Route path='/Clientes' element={<AdminClient/>}></Route>
       <Route path='/Carta' element={<Dish/>}></Route>
+      <Route path='/ReservarRecepcion' element={<ReserveRecep/>}></Route>
+      <Route path='/DispoRecpecion' element={<DisponiRecep/>}></Route>
+      
     </Routes>
     </BrowserRouter>
     );

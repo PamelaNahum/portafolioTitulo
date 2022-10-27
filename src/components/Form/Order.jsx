@@ -4,12 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 const initialReserva =[
   {
-    rut:'',
-    nombre:'',
-    correo:'',
-    fecha:'',
-    persona:'',
-    mensaje:''
+    rut:''
   }
 ]
 
@@ -17,8 +12,8 @@ const OrderForm = ()=>{
 
   const [reserva, setReserva]=useState(initialReserva);
   const navigate = useNavigate();
-  const handleOnclick = useCallback(()=>navigate('/', {replace:true}, [navigate]));
-  const {rut, nombre, correo, fecha, persona, mensaje}= reserva;
+  const handleOnclick = useCallback(()=>navigate('/Carta', {replace:true}, [navigate]));
+  const {rut}= reserva;
 
   const handleInputChange=(e)=>{
     
@@ -43,7 +38,6 @@ const OrderForm = ()=>{
   const handleSubmit =(e)=>{
     e.preventDefault();
     handleOnclick()
-    //login()
   }
 
     return(
