@@ -9,6 +9,7 @@ import SpecialMenu from './Menu/SpecialMenu';
 import ReserveForm from './ReserveForm/ReserveForm';
 import FormOrder from './ReserveForm/OrderForm';
 import SearchForm from './ReserveForm/SearchForm';
+import TableUsers from '../components/Table/TableUsers';
 
 export {
   AboutUs,
@@ -21,5 +22,6 @@ export {
   SpecialMenu,
   ReserveForm,
   FormOrder,
-  SearchForm
+  SearchForm,
+  TableUsers
 };

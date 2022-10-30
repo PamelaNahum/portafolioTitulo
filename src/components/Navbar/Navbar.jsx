@@ -50,6 +50,7 @@ const Navbar =({tipo})=>{
                     <li><Link to="/admin" style={{ textDecoration: 'none' }}>Inicio</Link></li>
                 <li><Link to="/Invetario" style={{ textDecoration: 'none' }}>Inventario</Link></li>
                 <li><Link to="/Mesas" style={{ textDecoration: 'none' }}>Mesas</Link></li>
+                <li><Link to="/Usuarios" style={{ textDecoration: 'none' }}>Usuarios</Link></li>
                 <li><Link to="/Clientes" style={{ textDecoration: 'none' }}>Clientes</Link></li>
                 <li><Link to="/Dispo" style={{ textDecoration: 'none' }}>Disponibilidad</Link></li>
                 <li><Link to="/ReportesAdmin" style={{ textDecoration: 'none' }}>Reportes</Link></li>

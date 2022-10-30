@@ -21,6 +21,7 @@ import DisponiRecep from "./pages/DisponiRecep";
 import ReportAdmin from "./pages/ReportAdmin";
 import AsigReserv from "./pages/AsigReserv";
 import MenuList from "./pages/Menu";
+import TableUser from "./pages/Users";
 
 const App =()=>{
     return(
@@ -46,6 +47,7 @@ const App =()=>{
       <Route path='/DispoRecpecion' element={<DisponiRecep/>}></Route>
       <Route path='/ReportesAdmin' element={<ReportAdmin/>}></Route>
       <Route path='/AsignarReserva' element={<AsigReserv/>}></Route>
+      <Route path='/Usuarios' element={<TableUser/>}></Route>
     </Routes>
     </BrowserRouter>
     );
