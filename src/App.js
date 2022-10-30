@@ -18,6 +18,9 @@ import AdminClient from "./pages/AdminClient";
 import Dish from "./pages/Dish";
 import ReserveRecep from "./pages/ReserveRecep";
 import DisponiRecep from "./pages/DisponiRecep";
+import ReportAdmin from "./pages/ReportAdmin";
+import AsigReserv from "./pages/AsigReserv";
+import MenuList from "./pages/Menu";
 
 const App =()=>{
     return(
@@ -31,16 +34,18 @@ const App =()=>{
       <Route path='/cocina' element={<Kitchen/>}></Route>
       <Route path='/admin' element={<Admin/>}></Route>
       <Route path='/finanzas' element={<Finance/>}></Route>
-      <Route path='/Recepcion' element={<Reception/>}></Route>
+      <Route path='/recepcion' element={<Reception/>}></Route>
       <Route path='/Bodega' element={<Storage/>}></Route>
       <Route path='/Mesas' element={<TableList/>}></Route>
       <Route path='/Reportes' element={<ReportFinance/>}></Route>
       <Route path='/Dispo' element={<Disponi/>}></Route>
       <Route path='/Clientes' element={<AdminClient/>}></Route>
+      <Route path='/Menu' element={<MenuList/>}></Route>
       <Route path='/Carta' element={<Dish/>}></Route>
       <Route path='/ReservarRecepcion' element={<ReserveRecep/>}></Route>
       <Route path='/DispoRecpecion' element={<DisponiRecep/>}></Route>
-      
+      <Route path='/ReportesAdmin' element={<ReportAdmin/>}></Route>
+      <Route path='/AsignarReserva' element={<AsigReserv/>}></Route>
     </Routes>
     </BrowserRouter>
     );

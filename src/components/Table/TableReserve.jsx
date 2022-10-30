@@ -46,16 +46,16 @@ const TableReserve =({mesas, setMesas, cliente, fecha, hora, type})=>{
         <table className="table table-bordered" >
           <thead>
             <tr>
-              <th>Mesa</th>
-              <th>Cantidad</th>
-              <th>Acciones</th>
+              <th style={{color:'white'}}>Mesa</th>
+              <th style={{color:'white'}}>Cantidad</th>
+              <th style={{color:'white'}}>Acciones</th>
             </tr>
           </thead>
           <tbody>
             {data.map(elemento=>(
               <tr>
-                <td>{elemento.name}</td>
-                <td>{elemento.capacity}</td>
+                <td style={{color:'white'}}>{elemento.name}</td>
+                <td style={{color:'white'}}>{elemento.capacity}</td>
                 <td><button className="btn btn-primary" style={{margin:10}} onClick={()=>reservar(elemento)} >Seleccionar</button> 
                 </td>
               </tr>
@@ -67,7 +67,7 @@ const TableReserve =({mesas, setMesas, cliente, fecha, hora, type})=>{
         <Modal isOpen={reservaCreada}>
           <ModalHeader>
             <div>
-              <h3>Reservado con exito</h3>
+              <h3 >Reservado con exito</h3>
             </div>
           </ModalHeader>
           <ModalBody>

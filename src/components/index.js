@@ -11,6 +11,8 @@ import TableMesas from './Table/Table';
 import TableClient from './Table/TableClient';
 import Cardfood from './Dish/Dish';
 import TableReserve from './Table/TableReserve';
+import SearchReserve from './Form/SearchReserve';
+import Menu from './Dish/Menu';
 
 export {
   SubHeading,
@@ -25,5 +27,7 @@ export {
   Cardfood,
   OrderForm,
   Reserve,
-  TableReserve
+  TableReserve,
+  SearchReserve,
+  Menu
 };

@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import {Cardfood, Navbar} from "../components";
+import {Menu, Navbar} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
-import { getDish, getOrderByRut } from "../services/Cliente";
-import { useLocation } from "react-router-dom";
-
-
+import { getDish } from "../services/Cliente";
 
 //import {useNavigate} from 'react-router-dom';
 
@@ -16,28 +13,21 @@ const override= {
     marginLeft:"50%"
   };
 
-const Dish = ({props}) => {
-    const location = useLocation();
+const MenuList = () => {
+
     const [loading, setLoading] = useState(false);
     const [dishes, setDishes] =useState([]);
-    const [order, setOrder] =useState([]);
-    const rut = location.state.rut;
 
     const getData = async()=>{
         setDishes(await getDish());
     }
-    const getOrder = async()=>{
-        setOrder(await getOrderByRut(rut));
-    }
     
     useEffect(()=>{
-        console.log(location.state.rut)
         setLoading(true)
         getData();
-        getOrder();
         setTimeout(()=>{
             setLoading(false)
-        }, 2000);
+        }, 200);
     },[])
 
     return(
@@ -49,8 +39,8 @@ const Dish = ({props}) => {
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
                 <div style={{display:'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
-                {dishes[0]!=undefined ? <Cardfood dishes={dishes} rut={rut} preOrder={order} /> : <></>}
-                    
+                
+                    <Menu dishes={dishes} />
                 
                 </div>
             </>
@@ -61,4 +51,4 @@ const Dish = ({props}) => {
 
 }
 
-export default Dish;
+export default MenuList;

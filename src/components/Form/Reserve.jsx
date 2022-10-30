@@ -143,7 +143,7 @@ const Reserve = ({type})=>{
       </div>
       
       <div style={{marginLeft:200 }}>
-      {showTable ? <TableReserve mesas={allTables} setMesas={setAllTables} cliente={reserva} fecha={date} hora={time} type={type} />: <p>Seleccione una fecha y hora</p>}
+      {showTable ? <TableReserve mesas={allTables} setMesas={setAllTables} cliente={reserva} fecha={date} hora={time} type={type} />: <p style={{color:'white'}}>Seleccione una fecha y hora</p>}
         
     
       </div>

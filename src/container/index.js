@@ -8,6 +8,8 @@ import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
 import ReserveForm from './ReserveForm/ReserveForm';
 import FormOrder from './ReserveForm/OrderForm';
+import SearchForm from './ReserveForm/SearchForm';
+
 export {
   AboutUs,
   Chef,
@@ -18,5 +20,6 @@ export {
   Laurels,
   SpecialMenu,
   ReserveForm,
-  FormOrder
+  FormOrder,
+  SearchForm
 };

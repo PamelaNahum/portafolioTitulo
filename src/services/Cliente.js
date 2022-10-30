@@ -16,8 +16,8 @@ const getClient = async()=>{
     return res.data;
 }
 
-const addOrder = async(order, clientId)=>{
-    const res = await axios.post(baseUrlCliente+"/Client/"+clientId+"/order", order, config);
+const addOrder = async(order, rut)=>{
+    const res = await axios.post(baseUrlCliente+"/Client/byRut/"+rut+"/order", order, config);
     console.log(res)
     return res.data;
 }
@@ -29,9 +29,23 @@ const getDish = async()=>{
     return res.data;
 }
 
+const getUserByRut = async(rut)=>{
+    //peticion con valor desde body
+    const res = await axios.get(baseUrlCliente+"/Client/byRut/"+rut, config);
+    console.log(res)
+    return res.data;
+}
+
+const getOrderByRut = async(rut)=>{
+    //peticion con valor desde body
+    const res = await axios.get(baseUrlCliente+"/Client/order/byRut/"+rut, config);
+    console.log(res)
+    return res.data;
+}
 
 
 
 
 
-export {addClient, getClient, getDish, addOrder};
+
+export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut};
