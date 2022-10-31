@@ -39,7 +39,7 @@ const TableUsers = ({ users, setUsers }) => {
     body={
       userId: user.id
     }
-    await enableUser(user.id, body);
+    await enableUser(user.id);
     setData(await getUser());
     setModalEliminar(false);
   };
@@ -48,7 +48,7 @@ const TableUsers = ({ users, setUsers }) => {
     body={
       userId: user.id
     }
-    await disableUser(user.id, body);
+    await disableUser(user.id);
     setData(await getUser());
     setModalEliminar(false);
   };
@@ -103,23 +103,23 @@ const TableUsers = ({ users, setUsers }) => {
               <td>{elemento.name} {elemento.lastName}</td>
               <td>{elemento.rut}</td>
               <td>{elemento.email}</td>
-              <td>{elemento.isValid ? "Deshabilitado" : "Habilitado"}</td>
+              <td>{elemento.isEnabled ? "Habilitado" : "Deshabilitar"}</td>
               <td>
                 {elemento.isEnabled ? (
-                  <button
-                    className="btn btn-danger"
-                    style={{ margin: 10 }}
-                    onClick={() => seleccionarUser(elemento, "Habilitar")}
-                  >
-                    Habilitar
-                  </button>
-                ) : (
                   <button
                     className="btn btn-danger"
                     style={{ margin: 10 }}
                     onClick={() => seleccionarUser(elemento, "Eliminar")}
                   >
                     Deshabilitar
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-danger"
+                    style={{ margin: 10 }}
+                    onClick={() => seleccionarUser(elemento, "Habilitar")}
+                  >
+                    Habilitar
                   </button>
                 )}
               </td>

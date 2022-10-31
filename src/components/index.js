@@ -13,6 +13,7 @@ import Cardfood from './Dish/Dish';
 import TableReserve from './Table/TableReserve';
 import SearchReserve from './Form/SearchReserve';
 import Menu from './Dish/Menu';
+import TableCashRegister from './Table/TableCashRegister';
 
 export {
   SubHeading,
@@ -29,5 +30,6 @@ export {
   Reserve,
   TableReserve,
   SearchReserve,
-  Menu
+  Menu,
+  TableCashRegister
 };

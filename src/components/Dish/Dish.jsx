@@ -20,12 +20,13 @@ var data ={};
 const CardFood = ({ dishes, rut, preOrder }) => {
   const [reservaCreada, setReservaCreada] = useState(false);
   const [showOrderReady, setShowOrderReady] = useState(false);
+  const [showPayReady, setShowPayReady] = useState(false);
   const [showPedir, setShowPedir] = useState(false);
   const [modalPago, setModalPago] = useState(false);
   const [list, setList] = useState([]);
   const navigate = useNavigate();
   const handleOnclick = useCallback(() => navigate("/", {}, [navigate]));
-  const fechaHoy = new Date();
+  const fechaHoy = new Date().toISOString;
 
   useEffect(() => {
     console.log(preOrder);
@@ -47,15 +48,16 @@ const CardFood = ({ dishes, rut, preOrder }) => {
       description: "descripcion",
       amount: total,
       isIncome: true,
-      date: {
-        year: fechaHoy.getFullYear(),
-        month: fechaHoy.getMonth(),
-        day: fechaHoy.getDay(),
-        dayOfWeek: 1,
-      },
+      date: fechaHoy,
     };
-    console.log(data)
-    await movement(data, "4de9c6eb-f644-4d3f-94d5-24ccd108ea93");
+    console.log(fechaHoy)
+    await movement(data, "4de9c6eb-f644-4d3f-94d5-24ccd108ea93").then (() => 
+      {setModalPago(false)
+      setShowPayReady(true)}
+    );
+    setTimeout(() => {
+      handleOnclick();
+    }, 2000);
 
   };
 
@@ -78,6 +80,14 @@ const CardFood = ({ dishes, rut, preOrder }) => {
         <Alert severity="success">
           <AlertTitle>Se ha realizado la orden con exito</AlertTitle>
           Pronto recibirá su pedido en su mesa
+        </Alert>
+      ) : (
+        <></>
+      )}
+      {showPayReady ? (
+        <Alert severity="success">
+          <AlertTitle>Se ha realizado el pago con exito</AlertTitle>
+          Gracias por preferirnos, vuelva pronto
         </Alert>
       ) : (
         <></>
