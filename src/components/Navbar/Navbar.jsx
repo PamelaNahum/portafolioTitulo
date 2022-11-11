@@ -62,7 +62,7 @@ const Navbar =({tipo})=>{
                 <li><Link to="/finanzas" style={{ textDecoration: 'none' }}>Inicio</Link></li>
                 <li><Link to="/CalGanacias" style={{ textDecoration: 'none' }}>Calcular Ganancias</Link></li>
                 <li><Link to="/Reportes" style={{ textDecoration: 'none' }}>Reportes</Link></li>
-                <li><Link to="/Boletas" style={{ textDecoration: 'none' }}>Emitir Boletas</Link></li>
+                <li><Link to="/Cajas" style={{ textDecoration: 'none' }}>Cajas</Link></li>
                 </ul>
             }
             {tipo==='cocina' && 
@@ -78,6 +78,7 @@ const Navbar =({tipo})=>{
                 <li><Link to="/ReservarRecepcion" style={{ textDecoration: 'none' }}>Reservar</Link></li>
                 <li><Link to="/AsignarReserva" style={{ textDecoration: 'none' }}>Asignar Mesa</Link></li>
                 <li><Link to="/DispoRecpecion" style={{ textDecoration: 'none' }}>Ver Disponibilidad</Link></li>
+                
                 </ul>
             }
             

@@ -43,7 +43,7 @@ const CashRegister = () => {
         />
       ) : (
         <>
-          <Navbar tipo={"admin"} />
+          <Navbar tipo={"finanzas"} />
           {allCashRegister[1] !== undefined ? (
             <TableCashRegister
               cashRegister={allCashRegister}

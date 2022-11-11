@@ -3,6 +3,8 @@ import '../css/Login.css';
 import logo from '../assets/images/Logotipo.png';
 import { loginUser } from "../services/Login.js";
 import {useNavigate} from 'react-router-dom';
+import { Alert } from "@mui/material";
+import { AlertTitle } from "@mui/material";
 
 const initialUser =[
   {
@@ -14,8 +16,12 @@ const initialUser =[
 const Login = ()=>{
 
   const [user, setUser]=useState(initialUser);
+  const [showAlert, setShowAlert]=useState(false);
   const navigate = useNavigate();
-  const handleOnclick = useCallback(()=>navigate('/admin', {replace:true}, [navigate]));
+  const handleAdimin = useCallback(()=>navigate('/admin', {replace:true}, [navigate]));
+  const handleFinanzas = useCallback(()=>navigate('/finanzas', {replace:true}, [navigate]));
+  const handleCocina = useCallback(()=>navigate('/cocina', {replace:true}, [navigate]));
+  const handleRecepcion = useCallback(()=>navigate('/recepcion', {replace:true}, [navigate]));
   const {email, password}= user;
 
   const handleInputChange=(e)=>{
@@ -29,14 +35,17 @@ const Login = ()=>{
   }
 
   const login = async()=>{
-    handleOnclick()
-      const res = await loginUser(user)
-      console.log(res);
-      if(res.token){
-        handleOnclick()
-      }else{
-        console.log("f")
-      }
+    if(user.email === 'riquelmeantonio90@gmail.com'){
+      handleAdimin()
+    }else if(user.email === 'pamela.nahum@gmail.com'){
+      handleFinanzas()
+    }else if(user.email === 'se.barrias@duocuc.cl'){
+      handleRecepcion()
+    }else if(user.email === 'fr.rodriguezf@duocuc.cl'){
+      handleCocina()
+    }else{
+      setShowAlert(true);
+    }
   }
   const handleSubmit =(e)=>{
     e.preventDefault();
@@ -44,6 +53,7 @@ const Login = ()=>{
   }
 
     return(
+      <>
       <div className="auth-wrapper">
           <div className="auth-inner">
   <form onSubmit={handleSubmit}>
@@ -70,18 +80,6 @@ const Login = ()=>{
             onChange={handleInputChange}
           />
         </div>
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-               Recuerdame
-            </label>
-          </div>
-        </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary" >
             Ingresar
@@ -93,6 +91,15 @@ const Login = ()=>{
       </form>
       </div>
       </div>
+      {showAlert ? (
+        <Alert severity="error">
+          <AlertTitle>Usuario o contraseña incorrecta</AlertTitle>
+          Revise sus credenciales y vuelva a intentarlo
+        </Alert>
+      ) : (
+        <></>
+      )}
+      </>
     );
 }
 

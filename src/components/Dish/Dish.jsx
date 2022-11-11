@@ -38,7 +38,7 @@ const CardFood = ({ dishes, rut, preOrder }) => {
     list.push(dish);
     setShowPedir(true);
     total = total + plato.precio;
-    console.log(list);
+    console.log("why"+list);
   };
 
   const pagar = async () => {
@@ -93,7 +93,7 @@ const CardFood = ({ dishes, rut, preOrder }) => {
         <></>
       )}
       {showPedir ? (
-        <button class="btn-flotante" onClick={() => setReservaCreada(true)}>
+        <button class="btn-flotante" style={{marginBottom:70}} onClick={() => setReservaCreada(true)}>
           Pedir
         </button>
       ) : (
