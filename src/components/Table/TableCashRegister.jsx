@@ -14,6 +14,7 @@ const TableCashRegister = ({ cashRegister, setCashRegister }) => {
   const [modalIsEnable, setModalIsEnable] = useState(false);
 
   useEffect(()=>{
+    console.log("hola")
     console.log("desde tabla: "+cashRegister)
 },[])
   

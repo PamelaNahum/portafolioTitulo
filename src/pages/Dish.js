@@ -27,7 +27,7 @@ const Dish = ({props}) => {
         setDishes(await getDish());
     }
     const getOrder = async()=>{
-        setOrder(await getOrderByRut(rut));
+        setOrder(await getOrderByRut(location.state.rut));
     }
     
     useEffect(()=>{
@@ -35,6 +35,7 @@ const Dish = ({props}) => {
         setLoading(true)
         getData();
         getOrder();
+        console.log(order)
         setTimeout(()=>{
             setLoading(false)
         }, 2000);
@@ -48,8 +49,8 @@ const Dish = ({props}) => {
             <>
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
-                <div style={{display:'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
-                {dishes[0]!=undefined ? <Cardfood dishes={dishes} rut={rut} preOrder={order} /> : <></>}
+                <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'}}>
+                {dishes[1]!=undefined ? <Cardfood dishes={dishes} rut={rut} preOrder={order} /> : <></>}
                     
                 
                 </div>

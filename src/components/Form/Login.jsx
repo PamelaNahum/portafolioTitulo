@@ -53,7 +53,7 @@ const Login = ()=>{
           <input
             type="text"
             className="form-control"
-            placeholder="Ingresa tu Rut"
+            placeholder="Ingresa tu Correo"
             value={rut}
             name='Rut'
             onChange={handleInputChange}

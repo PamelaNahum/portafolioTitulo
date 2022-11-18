@@ -14,6 +14,7 @@ import TableReserve from './Table/TableReserve';
 import SearchReserve from './Form/SearchReserve';
 import Menu from './Dish/Menu';
 import TableCashRegister from './Table/TableCashRegister';
+import TableEnables from './Table/TableEnables'
 
 export {
   SubHeading,
@@ -31,5 +32,6 @@ export {
   TableReserve,
   SearchReserve,
   Menu,
-  TableCashRegister
+  TableCashRegister,
+  TableEnables
 };

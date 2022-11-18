@@ -71,7 +71,7 @@ const OrderForm = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="Ingresa tu Rut"
+              placeholder="Ingresa tu Correo"
               value={rut}
               name="rut"
               onChange={handleInputChange}

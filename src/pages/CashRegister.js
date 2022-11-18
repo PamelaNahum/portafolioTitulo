@@ -50,7 +50,10 @@ const CashRegister = () => {
               setCashRegister={setAllCashRegister}
             />
           ) : (
-            <></>
+            <TableCashRegister
+              cashRegister={allCashRegister}
+              setCashRegister={setAllCashRegister}
+            />
           )}
         </>
       )}

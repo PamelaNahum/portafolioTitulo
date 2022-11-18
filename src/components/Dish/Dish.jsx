@@ -29,7 +29,8 @@ const CardFood = ({ dishes, rut, preOrder }) => {
   const fechaHoy = new Date().toISOString;
 
   useEffect(() => {
-    console.log(preOrder);
+    total=0;
+    console.log('preOrder',preOrder);
     preOrder[0].map((elem) => (total = total + elem.price));
   }, []);
 
@@ -44,20 +45,17 @@ const CardFood = ({ dishes, rut, preOrder }) => {
   const pagar = async () => {
     console.log(data)
     data = {
-      cashRegisterId: "4de9c6eb-f644-4d3f-94d5-24ccd108ea93",
+      cashRegisterId: "93fd0371-50ad-49a7-8e25-a31ea652c64b",
       description: "descripcion",
       amount: total,
       isIncome: true,
       date: fechaHoy,
     };
     console.log(fechaHoy)
-    await movement(data, "4de9c6eb-f644-4d3f-94d5-24ccd108ea93").then (() => 
+    await movement(data, "93fd0371-50ad-49a7-8e25-a31ea652c64b").then (() => 
       {setModalPago(false)
       setShowPayReady(true)}
     );
-    setTimeout(() => {
-      handleOnclick();
-    }, 2000);
 
   };
 
@@ -68,27 +66,59 @@ const CardFood = ({ dishes, rut, preOrder }) => {
       setShowPedir(false);
       setShowOrderReady(true);
     });
-
-    setTimeout(() => {
-      handleOnclick();
-    }, 2000);
   };
 
   return (
     <>
       {showOrderReady ? (
-        <Alert severity="success">
-          <AlertTitle>Se ha realizado la orden con exito</AlertTitle>
-          Pronto recibirá su pedido en su mesa
-        </Alert>
+        <Modal isOpen={showOrderReady}>
+        <ModalHeader>
+          <div>
+            <h3 >Pedido realizado con exito</h3>
+          </div>
+        </ModalHeader>
+        <ModalBody>
+          <div className="form-group">
+
+            <p>El pedido se ha realizado con éxito, pronto recibirá el plato en su mesa</p>
+            <br />
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <button
+            className="btn btn-primary"
+            onClick={()=>{setReservaCreada(false); handleOnclick()}}
+          >
+            Aceptar
+          </button>
+        </ModalFooter>
+      </Modal>
       ) : (
         <></>
       )}
       {showPayReady ? (
-        <Alert severity="success">
-          <AlertTitle>Se ha realizado el pago con exito</AlertTitle>
-          Gracias por preferirnos, vuelva pronto
-        </Alert>
+        <Modal isOpen={showPayReady}>
+        <ModalHeader>
+          <div>
+            <h3 >Pago realizado con exito</h3>
+          </div>
+        </ModalHeader>
+        <ModalBody>
+          <div className="form-group">
+
+            <p>El pago se a realizado con exito, Gracias por preferirnos</p>
+            <br />
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <button
+            className="btn btn-primary"
+            onClick={()=>{setReservaCreada(false); handleOnclick()}}
+          >
+            Aceptar
+          </button>
+        </ModalFooter>
+      </Modal>
       ) : (
         <></>
       )}
@@ -193,7 +223,7 @@ const CardFood = ({ dishes, rut, preOrder }) => {
               setReservaCreada(false);
             }}
           >
-            Serguir Ordenando
+            Seguir Ordenando
           </button>
         </ModalFooter>
       </Modal>
@@ -217,6 +247,12 @@ const CardFood = ({ dishes, rut, preOrder }) => {
             ))}
             <p>Total a pagar: ${total}</p>
             <br />
+            <p>Seleccione método de pago</p>
+            <select 
+          style={{width:'70%'}}>
+             <option value="Efectivo">Efectivo</option>
+             <option value="Tarjeta">Tarjeta</option>
+          </select>
           </div>
         </ModalBody>
         <ModalFooter>
@@ -231,10 +267,10 @@ const CardFood = ({ dishes, rut, preOrder }) => {
           <button
             className="btn btn-primary"
             onClick={() => {
-              setReservaCreada(false);
+              setModalPago(false);
             }}
           >
-            Serguir Ordenando
+            Seguir Ordenando
           </button>
         </ModalFooter>
       </Modal>

@@ -38,7 +38,7 @@ const MenuList = () => {
             <>
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
-                <div style={{display:'grid', gridTemplateColumns: 'repeat(3, 1fr)'}}>
+                <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'}}>
                 
                     <Menu dishes={dishes} />
                 
