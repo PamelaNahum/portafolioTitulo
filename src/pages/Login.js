@@ -43,6 +43,8 @@ const Login = ()=>{
       handleRecepcion()
     }else if(user.email === 'fr.rodriguezf@duocuc.cl'){
       handleCocina()
+    }else if(user.email === 'pamela.nahum14@gmail.com'){
+      handleAdimin()
     }else{
       setShowAlert(true);
     }

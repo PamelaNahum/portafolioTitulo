@@ -43,9 +43,21 @@ const getOrderByRut = async(rut)=>{
     return res.data;
 }
 
+const getAllOrders = async()=>{
+    //peticion con valor desde body
+    const res = await axios.get(baseUrlCliente+"/Client/orders", config);
+    console.log(res)
+    return res.data;
+}
+
+const finishOrders = async(body)=>{
+    //peticion con valor desde body
+    const res = await axios.post(baseUrlCliente+"/Client/"+body.orderId+"/order/Finished",body, config);
+    console.log(res)
+    return res.data;
+}
 
 
 
 
-
-export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut};
+export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut, getAllOrders, finishOrders};

@@ -23,6 +23,7 @@ import AsigReserv from "./pages/AsigReserv";
 import MenuList from "./pages/Menu";
 import TableUser from "./pages/Users";
 import CashRegister from "./pages/CashRegister";
+import ChefOrders from "./pages/ChefOrders";
 
 const App =()=>{
     return(
@@ -50,6 +51,7 @@ const App =()=>{
       <Route path='/AsignarReserva' element={<AsigReserv/>}></Route>
       <Route path='/Usuarios' element={<TableUser/>}></Route>
       <Route path='/Cajas' element={<CashRegister/>}></Route>
+      <Route path='/Pedidos' element={<ChefOrders/>}></Route>
     </Routes>
     </BrowserRouter>
     );
