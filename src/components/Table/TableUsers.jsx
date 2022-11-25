@@ -80,6 +80,7 @@ const TableUsers = ({ users, setUsers }) => {
       <br />
       <br />
       <br />
+      <p className="p__cormorant" style={{ color: '#E76F51', margin: '2rem 0' }}>Mantenedor de Usuarios</p>
       <button className="btn btn-success" onClick={() => abrirModalInsertar()}>
         Insertar
       </button>
@@ -88,7 +89,6 @@ const TableUsers = ({ users, setUsers }) => {
       <user className="table table-bordered">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Rut</th>
             <th>Email</th>
@@ -99,7 +99,6 @@ const TableUsers = ({ users, setUsers }) => {
         <tbody>
           {data.map((elemento) => (
             <tr>
-              <td>{elemento.id}</td>
               <td>{elemento.name} {elemento.lastName}</td>
               <td>{elemento.rut}</td>
               <td>{elemento.email}</td>

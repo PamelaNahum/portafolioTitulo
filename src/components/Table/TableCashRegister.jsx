@@ -71,6 +71,7 @@ const TableCashRegister = ({ cashRegister, setCashRegister }) => {
       <br />
       <br />
       <br />
+      <p className="p__cormorant" style={{ color: '#E76F51', margin: '2rem 0' }}>Mantenedor de Cajas</p>
       <button className="btn btn-success" onClick={() => abrirModalInsertar()}>
         Insertar
       </button>
@@ -79,7 +80,6 @@ const TableCashRegister = ({ cashRegister, setCashRegister }) => {
       <user className="table table-bordered">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Estado</th>
             <th>Activa</th>
             <th>Ganacias</th>
@@ -89,7 +89,6 @@ const TableCashRegister = ({ cashRegister, setCashRegister }) => {
         <tbody>
           {data.map((elemento) => (
             <tr>
-              <td>{elemento.id}</td>
               <td>{elemento.enabled ? "Habilitada" : "Deshabilitada"} </td>
               <td>{elemento.isOpen ? "Abierta" : "Cerrada"}</td>
               <td>{elemento.totalIncome}</td>

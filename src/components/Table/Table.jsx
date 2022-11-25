@@ -69,12 +69,12 @@ const TableMesas =({mesas, setMesas})=>{
     return(
         <div className="App" >
         <br /><br /><br /><br />
+        <p className="p__cormorant" style={{ color: '#E76F51', margin: '2rem 0' }}>Mantenedor de Mesas</p>
       <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Insertar</button>
       <br /><br />
         <table className="table table-bordered" >
           <thead>
             <tr>
-              <th>ID</th>
               <th>Mesa</th>
               <th>Cantidad</th>
               <th>Estado</th>
@@ -84,7 +84,6 @@ const TableMesas =({mesas, setMesas})=>{
           <tbody>
             {data.map(elemento=>(
               <tr>
-                <td>{elemento.id}</td>
                 <td>{elemento.name}</td>
                 <td>{elemento.capacity}</td>
                 <td>{elemento.isEnabled ? 'Deshabilitada':'Habilitada'}</td>

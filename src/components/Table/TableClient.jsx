@@ -70,10 +70,10 @@ const TableClient =({client, setClient})=>{
         <div className="App" >
         <br /><br /><br /><br />
       <br /><br />
+      <p className="p__cormorant" style={{ color: '#E76F51', margin: '2rem 0' }}>Mantenedor de Clientes</p>
         <table className="table table-bordered" >
           <thead>
             <tr>
-              <th>ID</th>
               <th>Nombre</th>
               <th>rut</th>
               <th>Mesa</th>
@@ -83,7 +83,6 @@ const TableClient =({client, setClient})=>{
           <tbody>
             {data.map(elemento=>(
               <tr>
-                <td>{elemento.clientId}</td>
                 <td>{elemento.name} {elemento.lastName}</td>
                 <td>{elemento.rut}</td>
                 <td>{elemento.tableId}</td>

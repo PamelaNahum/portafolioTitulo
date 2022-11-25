@@ -15,13 +15,13 @@ const override= {
 
 const ChefOrders = () => {
 
-    const [allTables, setAllTables] = useState([{ id: 1, name: "Mesahfdkghkfjdgh1", capcity: 5 },]);
+    const [allTables, setAllTables] = useState([]);
     var tables = [];
 
     const [loading, setLoading] = useState(false);
     const tablesEnable = async() =>{
         tables = await getAllOrders();
-        console.log(await getAllOrders())
+        //console.log(tables.length !== 0)
         
     }
     useEffect(()=>{

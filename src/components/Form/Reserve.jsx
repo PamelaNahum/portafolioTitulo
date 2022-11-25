@@ -76,18 +76,10 @@ const Reserve = ({ type }) => {
       reservationDateStr:fecha, 
       reservationTimeStr:hora,
       tableId: mesa,
-      reservationDate: {
-          year: date.year,
-          month: date.month,
-          day: date.day,
-          dayOfWeek: 1
-      },
-      reservationTime: {
-          hour: time.hrs,
-          minute: time.min
-        }
+      tableName: allTables.filter(element => element.id === mesa)[0].name 
 
    }
+   console.log(cli);
    await addClient(cli);
    setReservaCreada(true);
 
