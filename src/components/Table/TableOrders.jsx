@@ -54,7 +54,7 @@ const TableOrders = ({ mesas, setMesas }) => {
                       <tr>
                         <td>{elemento.dish}</td>
                         {/* <td>{getName(elemento.tableId) }</td> */}
-                        <td>{elemento.tableId}</td>
+                        <td>{elemento.tableName}</td>
                         <td>
                           <button
                             className="btn btn-primary"
@@ -74,7 +74,7 @@ const TableOrders = ({ mesas, setMesas }) => {
                     <tr>
                       <td>{elemento.dish}</td>
                       {/* <td>{getName(elemento.tableId) }</td> */}
-                      <td>{elemento.tableId}</td>
+                      <td>{elemento.tableName}</td>
                       <td>
                         <button
                           className="btn btn-primary"
