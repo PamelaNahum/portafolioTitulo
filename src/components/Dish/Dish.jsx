@@ -141,7 +141,7 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
       ) : (
         <></>
       )}
-      {dishes.map((element) => (
+      {dishes[0] !== undefined ? <>{dishes.map((element) => (
         <Card sx={{ maxWidth: 300, margin: 10 }}>
           <CardMedia
             component="img"
@@ -171,7 +171,8 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
             </Button>
           </CardActions>
         </Card>
-      ))}
+      ))}</>: <></>}
+      
 
       <Modal isOpen={reservaCreada}>
         <ModalHeader>
