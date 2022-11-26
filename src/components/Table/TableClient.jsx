@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
-import { addTable, disableTable, editTable, enableTable, getTable } from "../../services/Tables";
+import { addTable, disableTable, editTable, enableTable, getTable, getTableid } from "../../services/Tables";
 import { BsArrowRightShort } from 'react-icons/bs';
 import './Table.css';
 
@@ -40,10 +40,9 @@ const TableClient =({client, setClient})=>{
         setModalEditar(false);
       }
     
-      const eliminar = async(table)=>{
-        await enableTable(table.id)
-        setData(await getTable())
-        setModalEliminar(false)
+      const obtenerNombre = async(table)=>{
+        const nom = await getTableid(table)
+        return nom.name
       }
 
       const habilitar = async(table)=>{
@@ -84,8 +83,8 @@ const TableClient =({client, setClient})=>{
             {data.map(elemento=>(
               <tr>
                 <td>{elemento.name} {elemento.lastName}</td>
-                <td>{elemento.rut}</td>
-                <td>{elemento.tableId}</td>
+                <td>{elemento.email}</td>
+                <td>{elemento.tableName}</td>
                 <td>{elemento.reservationDatetime}</td>
               </tr>
             ))
