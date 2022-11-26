@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import '../css/Home.css'
-import {Navbar, TableMesas, TableOrders} from "../components";
+import {Navbar, TableMesas, TableProvider} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
-import { getTable } from "../services/Tables";
-import { getAllOrders } from "../services/Cliente";
+import { TableUsers } from "../container";
+import { getUser } from "../services/User";
+import { getProvider } from "../services/Tables";
 //import {useNavigate} from 'react-router-dom';
 
 const override= {
@@ -13,23 +14,23 @@ const override= {
     marginLeft:"50%"
   };
 
-const ChefOrders = () => {
+const Provider = () => {
 
-    const [allTables, setAllTables] = useState([]);
-    var tables = [];
+    const [allUsers, setAllUsers] = useState([]);
+    var user = [];
 
     const [loading, setLoading] = useState(false);
-    const tablesEnable = async() =>{
-        tables = await getAllOrders();
-        //console.log(tables.length !== 0)
+    const UsersEnable = async() =>{
+        user = await getProvider();
+        console.log(await getProvider())
         
     }
     useEffect(()=>{
         setLoading(true)
-        tablesEnable()
+        UsersEnable()
         setTimeout(()=>{
-            setAllTables(tables)
-            console.log(tables)
+            setAllUsers(user)
+            
             setLoading(false)
         }, 5000);
     },[])
@@ -40,8 +41,8 @@ const ChefOrders = () => {
             loading ? <PropagateLoader color={'red'} loading = {loading} cssOverride={override} size={40}/>
             :
             <>
-                <Navbar tipo={'cocina'}/>
-                <TableOrders mesas={allTables} setMesas={setAllTables}/>
+                <Navbar tipo={'admin'}/>
+                <TableProvider users={allUsers} setUsers={setAllUsers}/>
             </>
         }
     
@@ -50,4 +51,4 @@ const ChefOrders = () => {
 
 }
 
-export default ChefOrders;
+export default Provider;

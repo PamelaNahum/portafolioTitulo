@@ -12,17 +12,19 @@ const TableOrders = ({ mesas, setMesas }) => {
   });
 
 
-  const insertar = async () => {
+  const insertar = async (elemento) => {
+    setMesaSeleccionado(elemento);
     var valorInsertar = {
-      clientId: mesaSeleccionado.clientId,
-      orderId: mesaSeleccionado.orderId,
+      clientId: elemento.clientId,
+      orderId: elemento.orderId,
     };
+    console.log(valorInsertar)
     await finishOrders(valorInsertar);
     setData(await getAllOrders());
   };
   const seleccionarMesa = (elemento) => {
     setMesaSeleccionado(elemento);
-    insertar();
+    
   };
 
   return (
@@ -57,7 +59,7 @@ const TableOrders = ({ mesas, setMesas }) => {
                           <button
                             className="btn btn-primary"
                             style={{ margin: 10 }}
-                            onClick={() => seleccionarMesa(elemento, "Editar")}
+                            onClick={() => {seleccionarMesa(elemento); insertar(elemento)}}
                           >
                             Preparado
                           </button>
@@ -77,7 +79,7 @@ const TableOrders = ({ mesas, setMesas }) => {
                         <button
                           className="btn btn-primary"
                           style={{ margin: 10 }}
-                          onClick={() => seleccionarMesa(elemento, "Editar")}
+                          onClick={() => {seleccionarMesa(elemento); insertar(elemento)}}
                         >
                           Preparado
                         </button>

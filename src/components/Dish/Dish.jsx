@@ -17,7 +17,7 @@ import { movement } from "../../services/Finances";
 var total = 0;
 var data ={};
 
-const CardFood = ({ dishes, rut, preOrder }) => {
+const CardFood = ({ dishes, rut, preOrder, client }) => {
   const [reservaCreada, setReservaCreada] = useState(false);
   const [showOrderReady, setShowOrderReady] = useState(false);
   const [showPayReady, setShowPayReady] = useState(false);
@@ -31,11 +31,12 @@ const CardFood = ({ dishes, rut, preOrder }) => {
   useEffect(() => {
     total=0;
     console.log('preOrder',preOrder);
+    console.log('cliente id',client);
     preOrder[0].map((elem) => (total = total + elem.price));
   }, []);
 
   const handleInputChange = (plato) => {
-    const dish = { dish: plato.nombre, amount: 1, price: plato.precio };
+    const dish = { clientId: client, dishId: plato.id, dish: plato.nombre, amount: 1, price: plato.precio };
     list.push(dish);
     setShowPedir(true);
     total = total + plato.precio;

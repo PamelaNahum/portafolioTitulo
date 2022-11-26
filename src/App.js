@@ -24,6 +24,7 @@ import MenuList from "./pages/Menu";
 import TableUser from "./pages/Users";
 import CashRegister from "./pages/CashRegister";
 import ChefOrders from "./pages/ChefOrders";
+import Provider from "./pages/Provider";
 
 const App =()=>{
     return(
@@ -52,6 +53,7 @@ const App =()=>{
       <Route path='/Usuarios' element={<TableUser/>}></Route>
       <Route path='/Cajas' element={<CashRegister/>}></Route>
       <Route path='/Pedidos' element={<ChefOrders/>}></Route>
+      <Route path='/Proveedores' element={<Provider/>}></Route>
     </Routes>
     </BrowserRouter>
     );

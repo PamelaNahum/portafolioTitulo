@@ -17,7 +17,7 @@ const OrderForm = () => {
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
   const handleOnclick = useCallback(() =>
-    navigate("/Carta", {state: { rut: cliente[0].rut }}, [navigate])
+    navigate("/Carta", {state: { rut: cliente[0].tableId, correo: cliente[0].email, cliente: cliente[0].clientId }}, [navigate])
   );
   const { rut } = reserva;
 

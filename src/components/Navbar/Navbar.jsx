@@ -48,7 +48,7 @@ const Navbar =({tipo})=>{
             {tipo==='admin' && 
                 <ul className='menu'>
                     <li><Link to="/admin" style={{ textDecoration: 'none' }}>Inicio</Link></li>
-                <li><Link to="/Invetario" style={{ textDecoration: 'none' }}>Inventario</Link></li>
+                <li><Link to="/Proveedores" style={{ textDecoration: 'none' }}>Proveedores</Link></li>
                 <li><Link to="/Mesas" style={{ textDecoration: 'none' }}>Mesas</Link></li>
                 <li><Link to="/Usuarios" style={{ textDecoration: 'none' }}>Usuarios</Link></li>
                 <li><Link to="/Clientes" style={{ textDecoration: 'none' }}>Clientes</Link></li>

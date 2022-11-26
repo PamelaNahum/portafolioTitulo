@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import '../css/Home.css'
 import {Cardfood, Navbar} from "../components";
 import PropagateLoader from 'react-spinners/PropagateLoader';
-import { getDish, getOrderByRut } from "../services/Cliente";
+import { getDish, getDishHabilitadas, getOrderByRut } from "../services/Cliente";
 import { useLocation } from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ const Dish = ({props}) => {
     const rut = location.state.rut;
 
     const getData = async()=>{
-        setDishes(await getDish());
+        setDishes(await getDishHabilitadas());
     }
     const getOrder = async()=>{
         setOrder(await getOrderByRut(location.state.rut));
@@ -50,7 +50,7 @@ const Dish = ({props}) => {
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
                 <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'}}>
-                {dishes[1]!=undefined ? <Cardfood dishes={dishes} rut={rut} preOrder={order} /> : <></>}
+                {dishes[1]!=undefined ? <Cardfood dishes={dishes} rut={location.state.correo} preOrder={order} client={location.state.cliente} /> : <></>}
                     
                 
                 </div>

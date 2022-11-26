@@ -16,6 +16,7 @@ import Menu from './Dish/Menu';
 import TableCashRegister from './Table/TableCashRegister';
 import TableEnables from './Table/TableEnables'
 import TableOrders from './Table/TableOrders';
+import TableProvider from './Table/TableProvider';
 
 export {
   SubHeading,
@@ -35,5 +36,6 @@ export {
   Menu,
   TableCashRegister,
   TableEnables,
-  TableOrders
+  TableOrders,
+  TableProvider
 };

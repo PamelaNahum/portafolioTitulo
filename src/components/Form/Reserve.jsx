@@ -77,7 +77,6 @@ const Reserve = ({ type }) => {
       reservationTimeStr:hora,
       tableId: mesa,
       tableName: allTables.filter(element => element.id === mesa)[0].name 
-
    }
    console.log(cli);
    await addClient(cli);

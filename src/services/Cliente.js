@@ -17,7 +17,7 @@ const getClient = async()=>{
 }
 
 const addOrder = async(order, rut)=>{
-    const res = await axios.post(baseUrlCliente+"/Client/byRut/"+rut+"/order", order, config);
+    const res = await axios.post(baseUrlCliente+"/Client/byEmail/"+rut+"/order", order, config);
     console.log(res)
     return res.data;
 }
@@ -29,16 +29,23 @@ const getDish = async()=>{
     return res.data;
 }
 
+const getDishHabilitadas = async()=>{
+    //peticion con valor desde body
+    const res = await axios.get(baseUrlBodega+"/obtener/recetasHabilitadas");
+    console.log(res)
+    return res.data;
+}
+
 const getUserByRut = async(rut)=>{
     //peticion con valor desde body
-    const res = await axios.get(baseUrlCliente+"/Client/byRut/"+rut, config);
+    const res = await axios.get(baseUrlCliente+"/Client/byEmail/"+rut, config);
     console.log(res)
     return res.data;
 }
 
 const getOrderByRut = async(rut)=>{
     //peticion con valor desde body
-    const res = await axios.get(baseUrlCliente+"/Client/order/byRut/"+rut, config);
+    const res = await axios.get(baseUrlCliente+"/Client/order/byTable/"+rut, config);
     console.log(res)
     return res.data;
 }
@@ -52,7 +59,7 @@ const getAllOrders = async()=>{
 
 const finishOrders = async(body)=>{
     //peticion con valor desde body
-    const res = await axios.post(baseUrlCliente+"/Client/"+body.orderId+"/order/Finished",body, config);
+    const res = await axios.patch(baseUrlCliente+"/Client/"+body.orderId+"/order/Finished",body, config);
     console.log(res)
     return res.data;
 }
@@ -60,4 +67,4 @@ const finishOrders = async(body)=>{
 
 
 
-export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut, getAllOrders, finishOrders};
+export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut, getAllOrders, finishOrders, getDishHabilitadas};
