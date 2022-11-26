@@ -182,7 +182,7 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
         </ModalHeader>
         <ModalBody>
           <div className="form-group">
-            {preOrder[0].map((elem) => (
+            {preOrder[0] !== undefined ? <>{preOrder[0].map((elem) => (
               <div style={{ flexDirection: "row", display: "flex" }}>
                 <div>
                   <h5>{elem.dish}</h5>
@@ -190,7 +190,8 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
                 </div>
                 <div></div>
               </div>
-            ))}
+            ))}</> : <></>}
+            
             {list.map((elem) => (
               <div style={{ flexDirection: "row", display: "flex" }}>
                 <div>

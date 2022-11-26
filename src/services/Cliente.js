@@ -63,6 +63,14 @@ const finishOrders = async(body)=>{
     console.log(res)
     return res.data;
 }
+
+const PrepareOrders = async(body)=>{
+    //peticion con valor desde body
+    const res = await axios.patch(baseUrlCliente+"/Client/"+body.orderId+"/order/Prepare",body, config);
+    console.log(res)
+    return res.data;
+}
+
 const actualizarStock = async (recetaId) => {
     //peticion con valor desde body
     const res = await axios.get(baseUrlBodega + "/actualizarStock/"+recetaId, config);
@@ -72,4 +80,4 @@ const actualizarStock = async (recetaId) => {
 
 
 
-export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut, getAllOrders, finishOrders, getDishHabilitadas, actualizarStock};
+export {addClient, getClient, getDish, addOrder, getUserByRut, getOrderByRut, getAllOrders, finishOrders, getDishHabilitadas, actualizarStock, PrepareOrders};

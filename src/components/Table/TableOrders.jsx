@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Table.css";
-import { finishOrders, getAllOrders } from "../../services/Cliente";
+import { finishOrders, getAllOrders, PrepareOrders } from "../../services/Cliente";
 
 const TableOrders = ({ mesas, setMesas }) => {
   const [data, setData] = useState(mesas);
@@ -22,6 +22,18 @@ const TableOrders = ({ mesas, setMesas }) => {
     await finishOrders(valorInsertar);
     setData(await getAllOrders());
   };
+
+  const preparar = async (elemento) => {
+    setMesaSeleccionado(elemento);
+    var valorInsertar = {
+      clientId: elemento.clientId,
+      orderId: elemento.orderId,
+    };
+    console.log(valorInsertar)
+    await PrepareOrders(valorInsertar);
+    setData(await getAllOrders());
+  };
+
   const seleccionarMesa = (elemento) => {
     setMesaSeleccionado(elemento);
     
@@ -76,13 +88,20 @@ const TableOrders = ({ mesas, setMesas }) => {
                       {/* <td>{getName(elemento.tableId) }</td> */}
                       <td>{elemento.tableName}</td>
                       <td>
-                        <button
+                        {elemento.state === "En Cocina" ? <button
+                          className="btn btn-primary"
+                          style={{ margin: 10 }}
+                          onClick={() => {seleccionarMesa(elemento); preparar(elemento)}}
+                        >
+                          Preparar
+                        </button> :<button
                           className="btn btn-primary"
                           style={{ margin: 10 }}
                           onClick={() => {seleccionarMesa(elemento); insertar(elemento)}}
                         >
-                          Preparado
-                        </button>
+                          Pedido listo
+                        </button> }
+                        
                       </td>
                     </tr>
                   ))}
