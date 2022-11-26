@@ -10,9 +10,8 @@ import { BsX } from "react-icons/bs";
 import "../Dish/Dish.css";
 import { addOrder } from "../../services/Cliente";
 import { useNavigate } from "react-router-dom";
-import { Alert } from "@mui/material";
-import { AlertTitle } from "@mui/material";
 import { movement } from "../../services/Finances";
+import { actualizarStock } from "../../services/Cliente";
 
 var total = 0;
 var data ={};
@@ -60,9 +59,14 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
 
   };
 
+  const actualizar = async(id)=>{
+    await actualizarStock(id)
+  }
+
   const ordenar = async () => {
     const id = rut;
     console.log(list);
+    list.map(elemento => {actualizar(elemento.dishId)} )
     await addOrder(list, id).then(() => {
       setShowPedir(false);
       setShowOrderReady(true);

@@ -83,6 +83,8 @@ const addProvider = async (provider) => {
     return res.data;
   };
 
+  
+
 export {
   getTable,
   addTable,
@@ -92,5 +94,5 @@ export {
   getTableReserve,
   getTableid,
   getProvider,
-  addProvider
+  addProvider,
 };
