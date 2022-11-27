@@ -45,14 +45,14 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
   const pagar = async () => {
     console.log(data)
     data = {
-      cashRegisterId: "93fd0371-50ad-49a7-8e25-a31ea652c64b",
+      cashRegisterId: "fc9c9599-d041-4ed3-999b-77e4aa600bac",
       description: "descripcion",
       amount: total,
       isIncome: true,
       date: fechaHoy,
     };
     console.log(fechaHoy)
-    await movement(data, "93fd0371-50ad-49a7-8e25-a31ea652c64b").then (() => 
+    await movement(data, "fc9c9599-d041-4ed3-999b-77e4aa600bac").then (() => 
       {setModalPago(false)
       setShowPayReady(true)}
     );
@@ -162,13 +162,16 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button
+            {element.habilitado ? <Button
               size="small"
               style={{ color: "#F05742" }}
               onClick={() => handleInputChange(element)}
             >
               Ordenar
-            </Button>
+            </Button>:<Typography variant="body2" color="text.secondary">
+              Sin Stock
+            </Typography>}
+            
           </CardActions>
         </Card>
       ))}</>: <></>}

@@ -24,7 +24,7 @@ const Dish = ({props}) => {
     const rut = location.state.rut;
 
     const getData = async()=>{
-        setDishes(await getDishHabilitadas());
+        setDishes(await getDish());
     }
     const getOrder = async()=>{
         setOrder(await getOrderByRut(location.state.rut));

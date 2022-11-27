@@ -52,7 +52,7 @@ const getOrderByRut = async(rut)=>{
 
 const getAllOrders = async()=>{
     //peticion con valor desde body
-    const res = await axios.get(baseUrlCliente+"/Client/orders", config);
+    const res = await axios.get(baseUrlCliente+"/Client/priorizedOrders", config);
     console.log(res)
     return res.data;
 }

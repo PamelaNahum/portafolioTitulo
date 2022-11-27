@@ -68,13 +68,19 @@ const TableOrders = ({ mesas, setMesas }) => {
                         {/* <td>{getName(elemento.tableId) }</td> */}
                         <td>{elemento.tableName}</td>
                         <td>
-                          <button
-                            className="btn btn-primary"
-                            style={{ margin: 10 }}
-                            onClick={() => {seleccionarMesa(elemento); insertar(elemento)}}
-                          >
-                            Preparado
-                          </button>
+                        {elemento.state === "En cocina" ? <button
+                          className="btn btn-primary"
+                          style={{ margin: 10 }}
+                          onClick={() => {seleccionarMesa(elemento); preparar(elemento)}}
+                        >
+                          Preparar
+                        </button> :<button
+                          className="btn btn-primary"
+                          style={{ margin: 10 }}
+                          onClick={() => {seleccionarMesa(elemento); insertar(elemento)}}
+                        >
+                          Pedido listo
+                        </button> }
                         </td>
                       </tr>
                     ))
@@ -88,7 +94,7 @@ const TableOrders = ({ mesas, setMesas }) => {
                       {/* <td>{getName(elemento.tableId) }</td> */}
                       <td>{elemento.tableName}</td>
                       <td>
-                        {elemento.state === "En Cocina" ? <button
+                        {elemento.state === "En cocina" ? <button
                           className="btn btn-primary"
                           style={{ margin: 10 }}
                           onClick={() => {seleccionarMesa(elemento); preparar(elemento)}}
