@@ -17,6 +17,7 @@ import TableCashRegister from './Table/TableCashRegister';
 import TableEnables from './Table/TableEnables'
 import TableOrders from './Table/TableOrders';
 import TableProvider from './Table/TableProvider';
+import TableOrderProvider from './Table/TableOrderProvider';
 
 export {
   SubHeading,
@@ -37,5 +38,6 @@ export {
   TableCashRegister,
   TableEnables,
   TableOrders,
-  TableProvider
+  TableProvider,
+  TableOrderProvider
 };

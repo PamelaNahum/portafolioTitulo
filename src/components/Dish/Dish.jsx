@@ -146,7 +146,7 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
           <CardMedia
             component="img"
             height="140"
-            image={require("../../assets/images/charquican.jpg")}
+            image={require('../../assets/images/menu/'+element.id+'.jpg')}
             alt="green iguana"
           />
           <CardContent>

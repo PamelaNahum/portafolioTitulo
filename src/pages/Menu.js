@@ -19,7 +19,8 @@ const MenuList = () => {
     const [dishes, setDishes] =useState([]);
 
     const getData = async()=>{
-        setDishes(await getDish());
+        const platos = await getDish()
+        setDishes(platos.sort((a,b)=>(a.categoria.localeCompare(b.categoria))));
     }
     
     useEffect(()=>{
@@ -38,7 +39,7 @@ const MenuList = () => {
             <>
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
-                <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'}}>
+                <div >
                 
                     <Menu dishes={dishes} />
                 

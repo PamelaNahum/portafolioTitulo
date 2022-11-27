@@ -69,7 +69,7 @@ const Navbar =({tipo})=>{
                 <ul className='menu'>
                 <li><Link to="/cocina" style={{ textDecoration: 'none' }}>Inicio</Link></li>
                 <li><Link to="/Pedidos" style={{ textDecoration: 'none' }}>Pedidos</Link></li>
-                <li><Link to="/Reservar" style={{ textDecoration: 'none' }}>Recetas</Link></li>
+                <li><Link to="/OrdernarProveedores" style={{ textDecoration: 'none' }}>Ordenar</Link></li>
                 </ul>
             }
             {tipo==='recepcion' && 
