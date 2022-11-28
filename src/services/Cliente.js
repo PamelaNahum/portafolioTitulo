@@ -1,4 +1,5 @@
 import axios from "axios";
+import download from 'downloadjs'
 
 import { baseUrlCliente, config, baseUrlBodega } from "./Config";
 
@@ -67,6 +68,21 @@ const getOrderByRut = async (rut) => {
   return res.data;
 };
 
+const getBoleta = async (id) => {
+  //peticion con valor desde body
+  await axios.get(
+    baseUrlCliente + "/Client/generateOrderpdf/byTable/" + id,
+    {
+      headers: {Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjAwMDAwMDAxLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBbnRvbmlvIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicmlxdWVsbWVhbnRvbmlvOTBAZ21haWwuY29tIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJIQlFYRlVLT09TU0NDT0o3SEM0TEFQNlFMSlFBUFdGNSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNjY5NjU4Nzk0LCJpc3MiOiJsb2NhbGhvc3Q6ODA4MCIsImF1ZCI6ImxvY2FsaG9zdDo4MDgwIn0.hb4fEqF5fkNqQT0cKMQV8Ulb0gqrE4kTRZHMSiv8mO0'},
+      responseType: 'blob',
+  }
+  ).then(response => {
+    const content = response.headers['content-type'];
+    download(response.data, "boleta", content)
+ })
+ .catch(error => console.log(error));
+};
+
 const getAllOrders = async () => {
   //peticion con valor desde body
   const res = await axios.get(
@@ -130,5 +146,6 @@ export {
   actualizarStock,
   PrepareOrders,
   getProduct,
-  sumarStock
+  sumarStock,
+  getBoleta
 };

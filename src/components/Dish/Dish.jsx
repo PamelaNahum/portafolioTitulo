@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { BsX } from "react-icons/bs";
 import "../Dish/Dish.css";
-import { addOrder } from "../../services/Cliente";
+import { addOrder, getBoleta } from "../../services/Cliente";
 import { useNavigate } from "react-router-dom";
 import { movement } from "../../services/Finances";
 import { actualizarStock } from "../../services/Cliente";
@@ -22,6 +22,7 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
   const [showPayReady, setShowPayReady] = useState(false);
   const [showPedir, setShowPedir] = useState(false);
   const [modalPago, setModalPago] = useState(false);
+  const [boleta, setBoleta] = useState("");
   const [list, setList] = useState([]);
   const navigate = useNavigate();
   const handleOnclick = useCallback(() => navigate("/", {}, [navigate]));
@@ -43,7 +44,7 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
   };
 
   const pagar = async () => {
-    console.log(data)
+  await getBoleta(preOrder[0][0].tableId)
     data = {
       cashRegisterId: "fc9c9599-d041-4ed3-999b-77e4aa600bac",
       description: "descripcion",
@@ -55,7 +56,8 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
     await movement(data, "fc9c9599-d041-4ed3-999b-77e4aa600bac").then (() => 
       {setModalPago(false)
       setShowPayReady(true)}
-    );
+    ); 
+    
 
   };
 
@@ -112,7 +114,6 @@ const CardFood = ({ dishes, rut, preOrder, client }) => {
           <div className="form-group">
 
             <p>El pago se a realizado con exito, Gracias por preferirnos</p>
-            <br />
           </div>
         </ModalBody>
         <ModalFooter>

@@ -60,7 +60,6 @@ const Navbar =({tipo})=>{
             {tipo==='finanzas' && 
                 <ul className='menu'>
                 <li><Link to="/finanzas" style={{ textDecoration: 'none' }}>Inicio</Link></li>
-                <li><Link to="/CalGanacias" style={{ textDecoration: 'none' }}>Calcular Ganancias</Link></li>
                 <li><Link to="/Reportes" style={{ textDecoration: 'none' }}>Reportes</Link></li>
                 <li><Link to="/Cajas" style={{ textDecoration: 'none' }}>Cajas</Link></li>
                 </ul>

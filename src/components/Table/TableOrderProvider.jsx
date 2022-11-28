@@ -61,7 +61,6 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
     providerId: userSeleccionado.providerId,
     productId: userSeleccionado.productId,
       amount: parseInt( userSeleccionado.amount),
-      price: parseInt(userSeleccionado.price),
     };
     console.log(valorInsertar);
     await addOrderProvider(valorInsertar);
@@ -93,7 +92,6 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
             <th>Id Producto</th>
             <th>Monto</th>
             <th>Estado</th>
-            <th>Precio</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -106,7 +104,6 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
               <td>{elemento.productId}</td>
               <td>{elemento.amount}</td>
               <td>{elemento.state}</td>
-              <td>{elemento.price}</td>
               <td><button
                     className="btn btn-danger"
                     style={{ margin: 10 }}
@@ -191,16 +188,7 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
               value={userSeleccionado ? userSeleccionado.amount : ""}
               onChange={handleChange}
             />
-            <br />
-
-            <label>Precio</label>
-            <input
-              className="form-control"
-              type="numeric"
-              name="price"
-              value={userSeleccionado ? userSeleccionado.price : ""}
-              onChange={handleChange}
-            />
+            
             <br />
           </div>
         </ModalBody>
