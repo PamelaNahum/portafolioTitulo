@@ -154,8 +154,7 @@ const Reserve = ({ type }) => {
               type="time"
               name="hora"
               value={hora}
-              min="09:00"
-              max="21:00"
+              
               onChange={handleInputChange}
             />
           </div>

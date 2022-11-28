@@ -26,6 +26,7 @@ import CashRegister from "./pages/CashRegister";
 import ChefOrders from "./pages/ChefOrders";
 import Provider from "./pages/Provider";
 import OrderProvider from "./pages/OrderProvider";
+import MeseroOrders from "./pages/MeseroOrders";
 
 const App =()=>{
     return(
@@ -56,6 +57,7 @@ const App =()=>{
       <Route path='/Pedidos' element={<ChefOrders/>}></Route>
       <Route path='/Proveedores' element={<Provider/>}></Route>
       <Route path='/OrdernarProveedores' element={<OrderProvider/>}></Route>
+      <Route path='/Garzon' element={<MeseroOrders/>}></Route>
     </Routes>
     </BrowserRouter>
     );

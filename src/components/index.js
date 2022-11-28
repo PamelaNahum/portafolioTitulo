@@ -18,6 +18,7 @@ import TableEnables from './Table/TableEnables'
 import TableOrders from './Table/TableOrders';
 import TableProvider from './Table/TableProvider';
 import TableOrderProvider from './Table/TableOrderProvider';
+import TableOrdersMesero from './Table/TableOrdersMesero';
 
 export {
   SubHeading,
@@ -39,5 +40,6 @@ export {
   TableEnables,
   TableOrders,
   TableProvider,
-  TableOrderProvider
+  TableOrderProvider,
+  TableOrdersMesero
 };

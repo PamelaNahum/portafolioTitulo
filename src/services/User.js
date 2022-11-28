@@ -27,7 +27,7 @@ const userRol = async(id, roleId)=>{
 
 const getRoles = async()=>{
     //peticion con valor desde body
-    const res = await axios.get("https://192.168.1.89:5051/roles",{}, config);
+    const res = await axios.get("https://localhost:5051/roles",{}, config);
     console.log(res)
     return res.data;
 }

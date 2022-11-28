@@ -88,7 +88,6 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
       <user className="table table-bordered">
         <thead>
           <tr>
-            <th>Id proveedor</th>
             <th>Id Producto</th>
             <th>Monto</th>
             <th>Estado</th>
@@ -98,9 +97,6 @@ const TableOrderProvider = ({ users, setUsers, proveedor, producto }) => {
         <tbody>
           {data.map((elemento) => (
             <tr>
-              <td>
-                {elemento.providerid}
-              </td>
               <td>{elemento.productId}</td>
               <td>{elemento.amount}</td>
               <td>{elemento.state}</td>

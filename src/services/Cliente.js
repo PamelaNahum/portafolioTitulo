@@ -93,6 +93,16 @@ const getAllOrders = async () => {
   return res.data;
 };
 
+const getAllFinished = async () => {
+  //peticion con valor desde body
+  const res = await axios.get(
+    baseUrlCliente + "/Client/finishedOrders",
+    config
+  );
+  console.log(res);
+  return res.data;
+};
+
 const finishOrders = async (body) => {
   //peticion con valor desde body
   const res = await axios.patch(
@@ -147,5 +157,6 @@ export {
   PrepareOrders,
   getProduct,
   sumarStock,
-  getBoleta
+  getBoleta,
+  getAllFinished
 };
