@@ -9,7 +9,14 @@ const activateReserve = async(id)=>{
     return res.data;
 }
 
+const finishedReserve = async(id)=>{
+    //peticion con valor desde body
+    const res = await axios.patch(baseUrlCliente+"/Client/"+id+"/reservation/finish", config);
+    console.log(res)
+    return res.data;
+}
 
 
 
-export {activateReserve};
+
+export {activateReserve, finishedReserve};

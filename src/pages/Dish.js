@@ -49,7 +49,7 @@ const Dish = ({props}) => {
             <>
                 <Navbar tipo={'cliente'} />
                 <br/><br/><br/><br/>
-                <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'}}>
+                <div>
                 {dishes[1]!=undefined ? <Cardfood dishes={dishes} rut={location.state.correo} preOrder={order} client={location.state.cliente} /> : <></>}
                     
                 
